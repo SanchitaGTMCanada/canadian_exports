@@ -27,6 +27,8 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
+import Header from "../components/Header";
+
 const images = {
   hero: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1400&q=85",
   about:
@@ -152,72 +154,7 @@ export default function Home() {
   return (
     <main className="overflow-hidden bg-white">
       {/* HEADER */}
-      <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#263206]/95 text-white backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-          <Link href="#home" className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#A8BD63] text-[#263206]">
-              <Leaf size={23} />
-            </div>
-            <div>
-              <p className="text-sm font-extrabold tracking-[0.12em]">
-                CANADIANA
-              </p>
-              <p className="text-[10px] font-semibold tracking-[0.28em] text-[#C1D38D]">
-                EXPORTS
-              </p>
-            </div>
-          </Link>
-
-          <nav className="hidden items-center gap-8 lg:flex">
-            {navigation.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-sm font-medium text-white/75 transition hover:text-[#C1D38D]"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          <Link href="#contact" className={`${buttonClass} hidden lg:inline-flex`}>
-            Let's Talk <ArrowUpRight size={17} />
-          </Link>
-
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="rounded-lg border border-white/20 p-2 text-white lg:hidden"
-            aria-label="Toggle navigation"
-          >
-            {mobileMenuOpen ? <X size={23} /> : <Menu size={23} />}
-          </button>
-        </div>
-
-        {mobileMenuOpen && (
-          <div className="border-t border-white/10 bg-[#263206] px-5 py-5 lg:hidden">
-            <nav className="flex flex-col gap-5">
-              {navigation.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-white/85"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Link
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className={buttonClass}
-              >
-                Let's Talk <ArrowUpRight size={17} />
-              </Link>
-            </nav>
-          </div>
-        )}
-      </header>
+     <Header/>
 
       {/* HERO */}
       <section
@@ -239,32 +176,32 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <SectionLabel light>Canadian Trade. Global Reach.</SectionLabel>
+            <SectionLabel light>Welcome to</SectionLabel>
 
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl lg:text-7xl">
-              Connecting Canadian Quality to{" "}
-              <span className="text-[#C1D38D]">Global Markets.</span>
+              Canadiana 
+              <br/>
+              <span className="text-[#C1D38D]">Exports</span>
             </h1>
 
             <p className="mt-7 max-w-xl text-base leading-8 text-white/75 sm:text-lg">
-              Building international trade connections through dependable
-              sourcing, quality Canadian products and coordinated export
-              solutions.
+              Global solutions for providing natural ingredients through advanced logistics
+As a trusted export solutions provider, we specialize in sourcing and delivering high-quality Canadian goods to global markets.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-4">
               <Link href="#services" className={buttonClass}>
                 Explore Our Services <ArrowRight size={17} />
               </Link>
-              <Link
+              {/* <Link
                 href="#about"
                 className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-[#3A4A09]"
               >
                 Discover Our Company
-              </Link>
+              </Link> */}
             </div>
 
-            <div className="mt-14 flex flex-wrap gap-8 border-t border-white/20 pt-7">
+            {/* <div className="mt-14 flex flex-wrap gap-8 border-t border-white/20 pt-7">
               <div>
                 <p className="text-2xl font-bold text-[#C1D38D]">Canada</p>
                 <p className="mt-1 text-xs text-white/65">Our Foundation</p>
@@ -277,7 +214,7 @@ export default function Home() {
                 <p className="text-2xl font-bold text-[#C1D38D]">Quality</p>
                 <p className="mt-1 text-xs text-white/65">Our Commitment</p>
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
@@ -287,29 +224,22 @@ export default function Home() {
             className="relative hidden lg:block"
           >
             <div className="absolute -right-5 -top-5 h-36 w-36 rounded-full border border-[#C1D38D]/40" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/20 shadow-2xl">
-              <img
-                src={images.shipping}
-                alt="Cargo containers ready for export"
-                className="h-[490px] w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#263206]/80 via-transparent to-transparent" />
-              <div className="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/20 bg-[#263206]/75 p-6 backdrop-blur-md">
-                <div className="flex items-center gap-3">
-                  <div className="rounded-xl bg-[#A8BD63] p-3 text-[#263206]">
-                    <Globe2 size={23} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-white">
-                      Connecting Markets
-                    </p>
-                    <p className="mt-1 text-xs text-white/65">
-                      Canadian products. International opportunities.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+         <div className="relative overflow-hidden rounded-[2rem] border border-white/20 shadow-2xl">
+  <img
+    src={images.shipping}
+    alt="Cargo containers ready for export"
+    className="h-[490px] w-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-t from-[#263206]/80 via-transparent to-transparent" />
+
+  {/* Globe Icon */}
+  <div className="absolute bottom-7 left-7">
+    <div className="flex w-fit items-center justify-center rounded-xl bg-[#263206]/80 p-4 text-[#A8BD63] shadow-lg backdrop-blur-md">
+      <Globe2 size={28} />
+    </div>
+  </div>
+</div>
           </motion.div>
         </div>
       </section>
