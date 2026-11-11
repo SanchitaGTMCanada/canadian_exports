@@ -86,24 +86,54 @@ const services = [
 
 const faqs = [
   {
-    question: "What products does Canadiana Exports specialize in?",
+    question: "What services does Canadiana Exports offer?",
     answer:
-      "Our focus includes Canadian potash (MOP) and high-quality agricultural pulses. Contact our team to discuss product specifications and availability.",
+      "Canadiana Exports specializes in facilitating the export of Canadian goods and products worldwide. Our services include product sourcing, logistics coordination, export documentation, and compliance management.",
   },
   {
-    question: "Which markets do you serve?",
+    question: "Which countries do Canadiana Exports ship to?",
     answer:
-      "We work to connect Canadian suppliers with international buyers. Contact us with your destination market so we can discuss your requirements.",
+      "We export to a wide range of countries across North America, Europe, Asia, and beyond. If you have specific destinations in mind, contact us for details.",
   },
   {
-    question: "How can I start working with Canadiana Exports?",
+    question: "How can I get started with Canadiana Exports?",
     answer:
-      "Send us your product requirements, estimated quantities and destination market through our contact section. Our team can then discuss the next steps.",
+      "Visit our Contact Us page, fill out the inquiry form, and one of our representatives will contact you to discuss your export needs.",
   },
   {
-    question: "Can you help with logistics and export documentation?",
+    question: "What types of products can I export through Canadiana Exports?",
     answer:
-      "We provide logistics coordination and export documentation support as part of our trade and sourcing solutions.",
+      "We handle a diverse array of products, including agricultural goods, industrial equipment, consumer products, and natural resources. If you need assistance with specific products, we're happy to help.",
+  },
+  {
+    question: "How are shipping logistics managed?",
+    answer:
+      "We coordinate the entire shipping process, from pickup to delivery. This includes freight forwarding, customs clearance, and ensuring compliance with international trade regulations.",
+  },
+  {
+    question: "How long does shipping typically take?",
+    answer:
+      "Shipping times vary depending on the destination and the nature of the products. Once your order is confirmed, we provide estimated delivery timelines.",
+  },
+  {
+    question: "Do you handle export documentation?",
+    answer:
+      "Absolutely. We manage all necessary export documentation, including certificates of origin, shipping invoices, and customs declarations.",
+  },
+  {
+    question: "How do you ensure compliance with international regulations?",
+    answer:
+      "Our team stays current with export laws and international trade regulations to ensure that all shipments meet the necessary compliance standards.",
+  },
+  {
+    question: "How is pricing determined for export services?",
+    answer:
+      "Pricing is based on the nature of the goods, shipping methods, and destination. Contact us for a personalized quote.",
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer:
+      "We accept credit card payments and other secure methods. Full payment details will be provided during the consultation process.",
   },
 ];
 
@@ -150,6 +180,9 @@ function SectionHeading({ eyebrow, title, description, light = false }) {
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeFaq, setActiveFaq] = useState(0);
+  const [showAllFaqs, setShowAllFaqs] = useState(false);
+  const [expandedQuestions, setExpandedQuestions] = useState({});
+  const QUESTION_LIMIT = 65;
 
   return (
     <main className="overflow-hidden bg-white">
@@ -157,92 +190,89 @@ export default function Home() {
      <Header/>
 
       {/* HERO */}
-      <section
-        id="home"
-        className="relative flex min-h-[760px] items-center bg-[#3A4A09] pt-24 text-white"
-      >
-        <div className="absolute inset-0">
-          <img
-            src={images.hero}
-            alt="International cargo shipping"
-            className="h-full w-full object-cover opacity-25"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#263206] via-[#3A4A09]/95 to-[#3A4A09]/65" />
-        </div>
+   
 
-        <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <SectionLabel light>Welcome to</SectionLabel>
 
-            <h1 className="max-w-3xl text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl lg:text-7xl">
-              Canadiana 
-              <br/>
-              <span className="text-[#C1D38D]">Exports</span>
-            </h1>
+<section
+  id="home"
+  className="relative flex min-h-[760px] items-center bg-[#4A5540] pt-24 text-white"
+>
+  {/* BACKGROUND IMAGE */}
+  <div className="absolute inset-0">
+    <img
+      src={images.hero}
+      alt="International cargo shipping"
+      className="h-full w-full object-cover opacity-60"
+    />
 
-            <p className="mt-7 max-w-xl text-base leading-8 text-white/75 sm:text-lg">
-              Global solutions for providing natural ingredients through advanced logistics
-As a trusted export solutions provider, we specialize in sourcing and delivering high-quality Canadian goods to global markets.
-            </p>
+    {/* Soft whitish overlay with subtle olive tint */}
+    <div className="absolute inset-0 bg-gradient-to-r from-[#263206]/75 via-[#536A0D]/45 to-[#FFFFFF]/15" />
 
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Link href="#services" className={buttonClass}>
-                Explore Our Services <ArrowRight size={17} />
-              </Link>
-              {/* <Link
-                href="#about"
-                className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-[#3A4A09]"
-              >
-                Discover Our Company
-              </Link> */}
-            </div>
-
-            {/* <div className="mt-14 flex flex-wrap gap-8 border-t border-white/20 pt-7">
-              <div>
-                <p className="text-2xl font-bold text-[#C1D38D]">Canada</p>
-                <p className="mt-1 text-xs text-white/65">Our Foundation</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-[#C1D38D]">Global</p>
-                <p className="mt-1 text-xs text-white/65">Our Reach</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-[#C1D38D]">Quality</p>
-                <p className="mt-1 text-xs text-white/65">Our Commitment</p>
-              </div>
-            </div> */}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative hidden lg:block"
-          >
-            <div className="absolute -right-5 -top-5 h-36 w-36 rounded-full border border-[#C1D38D]/40" />
-         <div className="relative overflow-hidden rounded-[2rem] border border-white/20 shadow-2xl">
-  <img
-    src={images.shipping}
-    alt="Cargo containers ready for export"
-    className="h-[490px] w-full object-cover"
-  />
-
-  <div className="absolute inset-0 bg-gradient-to-t from-[#263206]/80 via-transparent to-transparent" />
-
-  {/* Globe Icon */}
-  <div className="absolute bottom-7 left-7">
-    <div className="flex w-fit items-center justify-center rounded-xl bg-[#263206]/80 p-4 text-[#A8BD63] shadow-lg backdrop-blur-md">
-      <Globe2 size={28} />
-    </div>
+    {/* Light overall effect */}
+    <div className="absolute inset-0 bg-white/10" />
   </div>
-</div>
-          </motion.div>
+
+  <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
+
+    {/* LEFT CONTENT */}
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+    >
+      <SectionLabel light>Welcome to</SectionLabel>
+
+      <h1 className="max-w-3xl text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl lg:text-7xl">
+        Canadiana
+        <br />
+        <span className="text-[#D5E5AA]">Exports</span>
+      </h1>
+
+      <p className="mt-7 max-w-xl text-base leading-8 text-white/95 sm:text-lg">
+        Global solutions for providing natural ingredients through advanced
+        logistics. As a trusted export solutions provider, we specialize in
+        sourcing and delivering high-quality Canadian goods to global markets.
+      </p>
+
+      <div className="mt-9 flex flex-wrap gap-4">
+        <Link href="#services" className={buttonClass}>
+          Explore Our Services <ArrowRight size={17} />
+        </Link>
+      </div>
+    </motion.div>
+
+    {/* RIGHT IMAGE */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.96 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8 }}
+      className="relative hidden lg:block"
+    >
+      <div className="absolute -right-5 -top-5 h-36 w-36 rounded-full border border-white/50" />
+
+      <div className="relative overflow-hidden rounded-[2rem] border border-white/40 shadow-2xl">
+        <img
+          src={images.shipping}
+          alt="Cargo containers ready for export"
+          className="h-[490px] w-full object-cover"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-[#263206]/45 via-transparent to-transparent" />
+
+        {/* Globe Icon */}
+        <div className="absolute bottom-7 left-7">
+          <div className="flex w-fit items-center justify-center rounded-xl border border-white/30 bg-white/20 p-4 text-white shadow-lg backdrop-blur-md">
+            <Globe2 size={28} />
+          </div>
         </div>
-      </section>
+      </div>
+    </motion.div>
+
+  </div>
+</section>
+
+
+
 
       {/* TRUST STRIP - WHITE */}
       <section className="border-b border-[#E8EBDD] bg-white">
@@ -267,7 +297,7 @@ As a trusted export solutions provider, we specialize in sourcing and delivering
       </section>
 
       {/* ABOUT - WHITE */}
-      <section id="about" className="bg-white py-24 lg:py-32">
+      <section id="about" className="bg-white py-10 lg:py-12">
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-5 lg:grid-cols-2 lg:px-8">
           <div className="relative">
             <div className="absolute -left-4 -top-4 h-28 w-28 rounded-tl-[2rem] border-l-4 border-t-4 border-[#A8BD63]" />
@@ -276,37 +306,34 @@ As a trusted export solutions provider, we specialize in sourcing and delivering
               alt="Shipping and international trade operations"
               className="relative h-[430px] w-full rounded-[1.7rem] object-cover shadow-xl sm:h-[520px]"
             />
-            <div className="absolute -bottom-7 right-5 max-w-[250px] rounded-2xl bg-[#3A4A09] p-6 text-white shadow-xl sm:right-[-20px]">
+            <div className="absolute -bottom-7 right-5 max-w-[250px] rounded-2xl bg-[#3A4A09] p-3 text-white shadow-xl sm:right-[-20px]">
               <Wheat className="mb-3 text-[#C1D38D]" size={28} />
-              <p className="text-lg font-bold">Rooted in Canada</p>
-              <p className="mt-2 text-sm leading-6 text-white/70">
+              {/* <p className="text-lg font-bold">Rooted in Canada</p> */}
+              {/* <p className="mt-2 text-sm leading-6 text-white/70">
                 Connecting Canadian products with opportunities around the
                 world.
-              </p>
+              </p> */}
             </div>
           </div>
 
           <div>
             <SectionHeading
               eyebrow="About Canadiana Exports"
-              title="Your Partner in Canadian Export Solutions"
-              description="Canadiana Exports is a Canada-based international trading company focused on connecting quality Canadian products with buyers around the world."
+              title="Canadian Exports"
+           
             />
 
             <p className="mt-5 text-sm leading-8 text-[#626A51]">
-              We specialize in potash (MOP) and high-quality agricultural
-              pulses, working to connect Canadian producers and suppliers with
-              international buyers, distributors, food processors and
-              wholesalers.
+              Canadiana Exports is a Canada-based international trading company specializing in the export of Potash (MOP) and high-quality agricultural pulses. Rooted in Canada’s globally respected agri-commodity and mineral supply base, we connect reliable Canadian producers with buyers across international markets.
             </p>
 
             <p className="mt-4 text-sm leading-8 text-[#626A51]">
-              Our approach focuses on dependable sourcing, clear
-              communication and practical coordination throughout the export
-              process.
+              Our business is built on consistency, compliance, and long-term partnerships. We work closely with fertilizer distributors, agri-input companies, food processors, wholesalers, and government buyers to deliver products that meet strict quality, regulatory, and logistical requirements.
+              <br/>
+              Canada’s reputation for ethical sourcing, advanced infrastructure, and transparent trade practices underpins every shipment we deliver.
             </p>
 
-            <div className="mt-8 grid grid-cols-2 gap-4">
+            {/* <div className="mt-8 grid grid-cols-2 gap-4">
               {[
                 { value: "Canadian", label: "Product Focus" },
                 { value: "International", label: "Trade Perspective" },
@@ -321,7 +348,7 @@ As a trusted export solutions provider, we specialize in sourcing and delivering
                   <p className="mt-1 text-xs text-[#626A51]">{item.label}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             <Link href="#contact" className={`${buttonClass} mt-9`}>
               Learn More About Us <ArrowRight size={17} />
@@ -331,7 +358,7 @@ As a trusted export solutions provider, we specialize in sourcing and delivering
       </section>
 
       {/* STATISTICS - LIGHT OLIVE */}
-      <section className="bg-[#EEF1E5] py-16">
+      {/* <section className="bg-[#EEF1E5] py-16">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 text-center lg:grid-cols-4 lg:px-8">
           {[
             { value: "100+", label: "Business Connections" },
@@ -349,10 +376,10 @@ As a trusted export solutions provider, we specialize in sourcing and delivering
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* SERVICES - DARK OLIVE */}
-      <section id="services" className="bg-[#3A4A09] py-24 lg:py-32">
+      {/* <section id="services" className="bg-[#3A4A09] py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <SectionHeading
@@ -395,10 +422,10 @@ As a trusted export solutions provider, we specialize in sourcing and delivering
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* LOGISTICS - WHITE */}
-      <section className="bg-white py-24 lg:py-28">
+      {/* <section className="bg-white py-24 lg:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
           <div>
             <SectionHeading
@@ -467,10 +494,10 @@ As a trusted export solutions provider, we specialize in sourcing and delivering
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* TEAM - DARK OLIVE */}
-      <section id="team" className="bg-[#263206] py-24 lg:py-28">
+      {/* <section id="team" className="bg-[#263206] py-24 lg:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:px-8">
           <div>
             <SectionHeading
@@ -523,123 +550,331 @@ As a trusted export solutions provider, we specialize in sourcing and delivering
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ - WHITE */}
-      <section className="bg-white py-24 lg:py-28">
-        <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-2 lg:px-8">
-          <SectionHeading
-            eyebrow="Frequently Asked Questions"
-            title="Questions About Working With Us?"
-            description="Find answers to common questions about our products, services and export coordination. Contact us if you need more information."
-          />
+     
+{/* FAQ SECTION */}
+<section className="relative overflow-hidden bg-[#f6faea] py-20 lg:py-24">
+  {/* Decorative background */}
+  <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full border border-[#A8BD63]/20" />
+  <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full border border-[#A8BD63]/20" />
 
-          <div className="space-y-3">
-            {faqs.map((faq, index) => {
-              const isActive = activeFaq === index;
+  <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
 
-              return (
-                <div
-                  key={faq.question}
-                  className={`overflow-hidden rounded-xl border transition ${
-                    isActive
-                      ? "border-[#A8BD63] bg-[#EEF1E5]"
-                      : "border-[#E6E9DF] bg-white"
-                  }`}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setActiveFaq(isActive ? -1 : index)}
-                    className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left"
-                  >
-                    <span className="text-sm font-bold text-[#3A4A09]">
-                      {faq.question}
-                    </span>
-                    <ChevronDown
-                      size={19}
-                      className={`shrink-0 text-[#536A0D] transition ${
-                        isActive ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
+    <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
 
-                  {isActive && (
-                    <div className="px-5 pb-5">
-                      <p className="text-sm leading-7 text-[#626A51]">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      {/* LEFT CONTENT */}
+      <div className="lg:sticky lg:top-28">
 
-      {/* CONTACT - LIGHT OLIVE */}
-      <section id="contact" className="bg-[#EEF1E5] py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="overflow-hidden rounded-[2rem] bg-[#536A0D] p-8 text-white sm:p-12 lg:p-16">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-              <div>
-                <SectionLabel light>Get In Touch</SectionLabel>
-                <h2 className="text-3xl font-bold leading-tight sm:text-5xl">
-                  Let's Build Your Next Trade Opportunity.
-                </h2>
-                <p className="mt-5 max-w-xl text-sm leading-8 text-white/75">
-                  Whether you are looking for Canadian products or exploring
-                  international trade opportunities, our team is ready to hear
-                  from you.
-                </p>
-                <a
-                  href="mailto:info@canadianaexports.ca"
-                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#A8BD63] px-7 py-3.5 text-sm font-bold text-[#263206] transition hover:bg-[#C1D38D]"
-                >
-                  Contact Our Team <ArrowRight size={17} />
-                </a>
-              </div>
+        <SectionLabel>Frequently Asked Questions</SectionLabel>
 
-              <div className="space-y-5 rounded-2xl border border-white/15 bg-[#3A4A09]/70 p-6 sm:p-8">
-                <a
-                  href="mailto:info@canadianaexports.ca"
-                  className="flex items-start gap-4"
-                >
-                  <Mail className="mt-1 shrink-0 text-[#C1D38D]" size={21} />
-                  <div>
-                    <p className="text-xs text-white/60">Email</p>
-                    <p className="mt-1 break-all text-sm font-semibold">
-                      info@canadianaexports.ca
-                    </p>
-                  </div>
-                </a>
+        <h2 className="max-w-lg text-4xl font-bold leading-[1.15] tracking-tight text-[#263206] sm:text-5xl">
+          Everything You
+          <span className="block text-[#7A941F]">
+            Need to Know.
+          </span>
+        </h2>
 
-                <a href="tel:+18676690242" className="flex items-start gap-4">
-                  <Phone className="mt-1 shrink-0 text-[#C1D38D]" size={21} />
-                  <div>
-                    <p className="text-xs text-white/60">Phone</p>
-                    <p className="mt-1 text-sm font-semibold">
-                      +1 867-669-0242
-                    </p>
-                  </div>
-                </a>
+        <p className="mt-6 max-w-md text-sm leading-8 text-[#626A51] sm:text-base">
+          Explore answers to common questions about our export services,
+          international shipping, documentation, products and business
+          processes.
+        </p>
 
-                <div className="flex items-start gap-4">
-                  <MapPin className="mt-1 shrink-0 text-[#C1D38D]" size={21} />
-                  <div>
-                    <p className="text-xs text-white/60">Address</p>
-                    <p className="mt-1 text-sm font-semibold leading-6">
-                      PO Box 20072, 4910-50th Street,
-                      <br />
-                      Yellowknife, NT X1A 3X8, Canada
-                    </p>
-                  </div>
-                </div>
-              </div>
+        {/* Contact Card */}
+        <div className="relative mt-10 overflow-hidden rounded-[1.7rem] bg-[#263206] p-7 text-white shadow-xl sm:p-9">
+
+          <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full border border-white/10" />
+          <div className="absolute -right-6 -top-6 h-28 w-28 rounded-full border border-white/10" />
+
+          <div className="relative">
+            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#A8BD63] text-[#263206]">
+              <Headphones size={24} />
+            </div>
+
+            <h3 className="text-2xl font-bold">
+              Still have questions?
+            </h3>
+
+            <p className="mt-3 text-sm leading-7 text-white/65">
+              Our team is ready to help you with your export requirements
+              and international trade enquiries.
+            </p>
+
+            <Link
+              href="#contact"
+              className="mt-7 inline-flex items-center gap-3 rounded-full bg-[#A8BD63] px-6 py-3 text-sm font-bold text-[#263206] transition-all duration-300 hover:bg-[#C1D38D] hover:gap-4"
+            >
+              Contact Our Team
+              <ArrowUpRight size={17} />
+            </Link>
+
+            <div className="mt-8 flex items-center gap-3 border-t border-white/15 pt-6">
+              <Mail size={17} className="shrink-0 text-[#C1D38D]" />
+              <a
+                href="mailto:info@canadianaexports.ca"
+                className="break-all text-sm text-white/75 transition hover:text-[#C1D38D]"
+              >
+                info@canadianaexports.ca
+              </a>
             </div>
           </div>
         </div>
-      </section>
+
+      </div>
+
+      {/* RIGHT FAQ ACCORDION */}
+      <div className="space-y-3">
+
+        {(showAllFaqs ? faqs : faqs.slice(0, 4)).map((faq, index) => {
+          const isActive = activeFaq === index;
+
+          return (
+            <motion.div
+              key={faq.question}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.35,
+                delay: index * 0.04,
+              }}
+              className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
+                isActive
+                  ? "border-[#A8BD63] bg-white shadow-lg shadow-[#3A4A09]/[0.06]"
+                  : "border-[#E2E8D4] bg-white/70 hover:border-[#A8BD63]/70 hover:bg-white"
+              }`}
+            >
+              <div className="flex items-center gap-2 px-5 py-5 sm:px-6 sm:py-6">
+                {/* Main question button */}
+                <button
+                  type="button"
+                  aria-expanded={isActive}
+                  aria-controls={`faq-answer-${index}`}
+                  onClick={() => setActiveFaq(isActive ? -1 : index)}
+                  className="flex min-w-0 flex-1 items-center gap-4 text-left"
+                >
+                  {/* Number */}
+                  <span
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xs font-extrabold transition-colors duration-300 ${
+                      isActive
+                        ? "bg-[#3A4A09] text-[#C1D38D]"
+                        : "bg-[#EEF1E5] text-[#536A0D]"
+                    }`}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  {/* Question */}
+                  <span className="min-w-0 flex-1 text-sm font-bold leading-6 text-[#3A4A09] sm:text-base">
+                    {expandedQuestions[index] ||
+                    faq.question.length <= QUESTION_LIMIT
+                      ? faq.question
+                      : `${faq.question.slice(0, QUESTION_LIMIT).trim()}...`}
+                  </span>
+
+                  {/* Toggle Icon */}
+                  <span
+                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
+                      isActive
+                        ? "rotate-180 bg-[#A8BD63] text-[#263206]"
+                        : "bg-[#F0F2E9] text-[#536A0D]"
+                    }`}
+                  >
+                    <ChevronDown size={19} />
+                  </span>
+                </button>
+
+                {/* Read more / Read less */}
+                {faq.question.length > QUESTION_LIMIT && (
+                  <button
+                    type="button"
+                    aria-label={
+                      expandedQuestions[index]
+                        ? "Show shorter question"
+                        : "Show full question"
+                    }
+                    onClick={() =>
+                      setExpandedQuestions((previous) => ({
+                        ...previous,
+                        [index]: !previous[index],
+                      }))
+                    }
+                    className="shrink-0 text-xs font-bold text-[#536A0D] underline decoration-[#A8BD63] underline-offset-4 transition hover:text-[#263206] sm:text-sm"
+                  >
+                    {expandedQuestions[index] ? "Read less" : "Read more"}
+                  </button>
+                )}
+              </div>
+
+              {/* Answer */}
+              <div
+                id={`faq-answer-${index}`}
+                className={`grid transition-all duration-300 ease-in-out ${
+                  isActive
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="ml-[3.75rem] border-t border-[#E8ECDF] px-4 pb-6 pt-4 sm:ml-[4.5rem] sm:mr-6 sm:px-0">
+                    <p className="text-sm leading-7 text-[#626A51]">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </motion.div>
+          );
+        })}
+
+        {/* Show more / show less FAQs */}
+        {faqs.length > 4 && (
+          <div className="flex justify-center pt-4">
+            <button
+              type="button"
+              onClick={() => {
+                setShowAllFaqs((previous) => !previous);
+                setActiveFaq(-1);
+              }}
+              aria-expanded={showAllFaqs}
+              className="inline-flex items-center gap-2 rounded-full bg-[#3A4A09] px-6 py-3 text-sm font-semibold text-white shadow-md transition duration-300 hover:bg-[#536A0D]"
+            >
+              {showAllFaqs ? "Show Less" : "View All FAQs"}
+              <ChevronDown
+                size={17}
+                className={`transition-transform duration-300 ${
+                  showAllFaqs ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+          </div>
+        )}
+
+        {/* Bottom note */}
+        <div className="flex items-center gap-3 px-2 pt-5">
+          <ShieldCheck
+            size={19}
+            className="shrink-0 text-[#7A941F]"
+          />
+          <p className="text-xs leading-6 text-[#737B65]">
+            Need specific information? Get in touch with our team
+            for assistance with your requirements.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      {/* CONTACT - LIGHT OLIVE */}
+  
+
+<section id="contact" className="bg-white py-20 lg:py-24">
+  <div className="mx-auto max-w-7xl px-5 lg:px-8">
+    <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#647F2E] via-[#536A0D] to-[#3A4A09] p-8 text-white shadow-xl sm:p-12 lg:p-16">
+
+      {/* Decorative gradient effects */}
+      <div className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-[#A8BD63]/15 blur-3xl" />
+
+      <div className="relative grid gap-12 lg:grid-cols-2 lg:items-center">
+
+        {/* LEFT CONTENT */}
+        <div>
+          <SectionLabel light>Get In Touch</SectionLabel>
+
+          <h2 className="mt-5 text-3xl font-bold leading-tight text-white sm:text-5xl">
+            Need reliable logistics solutions?
+          </h2>
+
+          <p className="mt-5 max-w-xl text-sm leading-8 text-white/90 sm:text-base">
+            Reach out for a free logistics consultation today.
+          </p>
+
+          <a
+            href="mailto:info@canadianaexports.ca"
+            className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-[#3A4A09] shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#F4F6ED] hover:shadow-xl"
+          >
+            Get Quote
+            <ArrowRight size={17} />
+          </a>
+        </div>
+
+        {/* RIGHT CONTACT DETAILS */}
+        <div className="space-y-6 rounded-2xl border border-white/25 bg-white/10 p-6 shadow-lg backdrop-blur-md sm:p-8">
+
+          {/* EMAIL */}
+          <a
+            href="mailto:info@canadianaexports.ca"
+            className="group flex items-start gap-4"
+          >
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/20 text-white transition duration-300 group-hover:bg-white group-hover:text-[#536A0D]">
+              <Mail size={21} />
+            </div>
+
+            <div className="min-w-0">
+              <p className="text-sm font-medium text-white/85">
+                Email
+              </p>
+              <p className="mt-1 break-all text-sm font-bold text-white sm:text-base">
+                info@canadianaexports.ca
+              </p>
+            </div>
+          </a>
+
+          <div className="border-t border-white/25" />
+
+          {/* PHONE */}
+          <a
+            href="tel:+18676690242"
+            className="group flex items-start gap-4"
+          >
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/20 text-white transition duration-300 group-hover:bg-white group-hover:text-[#536A0D]">
+              <Phone size={21} />
+            </div>
+
+            <div>
+              <p className="text-sm font-medium text-white/85">
+                Phone
+              </p>
+              <p className="mt-1 text-sm font-bold text-white sm:text-base">
+                +1 867-669-0242
+              </p>
+            </div>
+          </a>
+
+          <div className="border-t border-white/25" />
+
+          {/* ADDRESS */}
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/20 text-white">
+              <MapPin size={21} />
+            </div>
+
+            <div>
+              <p className="text-sm font-medium text-white/85">
+                Address
+              </p>
+              <p className="mt-1 text-sm font-bold leading-7 text-white sm:text-base">
+                PO Box 20072, 4910-50th Street,
+                <br />
+                Yellowknife, NT X1A 3X8, Canada
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* FOOTER - DEEP OLIVE */}
       <footer className="bg-[#1E2805] text-white">
