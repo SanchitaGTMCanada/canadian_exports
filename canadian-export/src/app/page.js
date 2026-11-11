@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -46,42 +46,13 @@ const navigation = [
 ];
 
 const services = [
-  {
-    icon: Search,
-    title: "Procurement & Sourcing",
-    description:
-      "We connect buyers with reliable Canadian suppliers and help source quality products to meet international requirements.",
-  },
-  {
-    icon: Truck,
-    title: "Logistics & Transportation",
-    description:
-      "We coordinate transportation and shipping solutions to support efficient movement of goods across international markets.",
-  },
-  {
-    icon: FileCheck,
-    title: "Customs & Documentation",
-    description:
-      "We support export documentation and coordination to help make international trade processes smoother.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Export Strategy",
-    description:
-      "We help businesses identify opportunities and develop practical approaches to entering global markets.",
-  },
-  {
-    icon: Package,
-    title: "Supply Chain Solutions",
-    description:
-      "We coordinate sourcing, suppliers and logistics to support dependable supply chain operations.",
-  },
-  {
-    icon: Headphones,
-    title: "Customer Support",
-    description:
-      "We maintain clear communication and coordination throughout the sourcing and export process.",
-  },
+  { number: "01", icon: Search, image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=85", imageAlt: "Warehouse inventory and product sourcing", title: "Procurement and Sourcing", description: "Vendor discovery, material procurement, and supplier management." },
+  { number: "02", icon: Truck, image: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=85", imageAlt: "Cargo containers ready for transportation", title: "Logistics and Transportation", description: "Multi-modal freight management with inventory transparency." },
+  { number: "03", icon: FileCheck, image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=85", imageAlt: "Export paperwork and documentation", title: "Customs and Documentation", description: "HS code validation, shipping documents, port clearances, and DGFT coordination." },
+  { number: "04", icon: TrendingUp, image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=900&q=85", imageAlt: "International trade and global market strategy", title: "Export Strategy and Market Integration", description: "Market entry research, trade compliance, and pricing strategy." },
+  { number: "05", icon: Package, image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=900&q=85", imageAlt: "Packages moving through a supply chain", title: "Supply Chain Optimization", description: "Demand forecasting, route optimization, and stock minimization." },
+  { number: "06", icon: Headphones, image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85", imageAlt: "Customer support team collaborating", title: "Customer Service and Support", description: "We provide 24/7 support, enabling you to track your orders." },
+  { number: "07", icon: Handshake, image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85", imageAlt: "Business consultants planning export strategy", title: "Consulting and Advisory Services", description: "We collaborate closely with you to develop tailored export strategies." },
 ];
 
 const faqs = [
@@ -182,7 +153,22 @@ export default function Home() {
   const [activeFaq, setActiveFaq] = useState(0);
   const [showAllFaqs, setShowAllFaqs] = useState(false);
   const [expandedQuestions, setExpandedQuestions] = useState({});
+  const servicesCarouselRef = useRef(null);
   const QUESTION_LIMIT = 65;
+
+  const scrollServices = (direction) => {
+    const container = servicesCarouselRef.current;
+    if (!container) return;
+
+    const card = container.querySelector("[data-service-card]");
+    if (!card) return;
+
+    const gap = 24;
+    const cardWidth = card.getBoundingClientRect().width + gap;
+    container.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
+  };
+
+
 
   return (
     <main className="overflow-hidden bg-white">
@@ -357,204 +343,90 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATISTICS - LIGHT OLIVE */}
-      {/* <section className="bg-[#EEF1E5] py-16">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 text-center lg:grid-cols-4 lg:px-8">
-          {[
-            { value: "100+", label: "Business Connections" },
-            { value: "10+", label: "Product Categories" },
-            { value: "30+", label: "Global Markets" },
-            { value: "24/7", label: "Communication Focus" },
-          ].map((item) => (
-            <div key={item.label}>
-              <p className="text-3xl font-extrabold tracking-tight text-[#3A4A09] sm:text-4xl">
-                {item.value}
-              </p>
-              <p className="mt-2 text-xs font-medium text-[#626A51] sm:text-sm">
-                {item.label}
+     
+{/* SERVICES CAROUSEL */}
+      <section id="services" className="relative overflow-hidden bg-[#F7F9F2] py-20 lg:py-24">
+        <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#A8BD63]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#536A0D]/[0.06] blur-3xl" />
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="flex flex-col justify-between gap-7 sm:flex-row sm:items-end">
+            <div>
+              <SectionLabel>What We Do</SectionLabel>
+              <h2 className="max-w-2xl text-3xl font-bold leading-tight tracking-tight text-[#3A4A09] sm:text-4xl lg:text-5xl">
+                Our Services
+                <span className="block text-[#7A941F]">Built Around Your Export Needs</span>
+              </h2>
+              <p className="mt-5 max-w-2xl text-sm leading-8 text-[#626A51] sm:text-base">
+                From sourcing and documentation to logistics and market strategy, we help coordinate the key parts of your export journey.
               </p>
             </div>
-          ))}
-        </div>
-      </section> */}
-
-      {/* SERVICES - DARK OLIVE */}
-      {/* <section id="services" className="bg-[#3A4A09] py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-            <SectionHeading
-              eyebrow="What We Do"
-              title="Trade Solutions Built Around Your Business"
-              description="From sourcing to shipment coordination, we support the different stages of international trade."
-              light
-            />
-            <Link href="#contact" className={`${buttonClass} shrink-0`}>
-              Discuss Your Requirements <ArrowUpRight size={17} />
-            </Link>
+            <div className="flex shrink-0 items-center gap-3">
+              <button type="button" onClick={() => scrollServices(-1)} aria-label="Scroll services left" className="flex h-12 w-12 items-center justify-center rounded-full border border-[#DCE4CB] bg-white text-[#3A4A09] shadow-md transition hover:-translate-y-0.5 hover:border-[#A8BD63] hover:bg-[#EEF3E3]">
+                <ArrowRight className="rotate-180" size={20} />
+              </button>
+              <button type="button" onClick={() => scrollServices(1)} aria-label="Scroll services right" className="flex h-12 w-12 items-center justify-center rounded-full bg-[#3A4A09] text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#536A0D]">
+                <ArrowRight size={20} />
+              </button>
+            </div>
           </div>
-
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
+          <div ref={servicesCarouselRef} className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {services.map((service) => (
+              <motion.article
+                key={service.number}
+                data-service-card
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.07 }}
-                className="group rounded-2xl border border-white/10 bg-[#465B0B] p-7 transition duration-300 hover:-translate-y-1 hover:bg-[#536A0D]"
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.4 }}
+                className="group relative flex w-[85%] min-w-[85%] snap-start flex-col overflow-hidden rounded-[1.7rem] border border-[#E3E9D8] bg-white shadow-[0_12px_35px_rgba(38,50,6,0.07)] transition duration-300 hover:-translate-y-2 hover:border-[#A8BD63] hover:shadow-[0_22px_50px_rgba(38,50,6,0.15)] sm:w-[calc((100%-1.5rem)/2)] sm:min-w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] lg:min-w-[calc((100%-3rem)/3)]"
               >
-                <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#A8BD63] text-[#263206] transition group-hover:bg-[#C1D38D]">
-                  <service.icon size={26} />
+                <div className="relative h-52 overflow-hidden sm:h-56">
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#18220A]/75 via-[#18220A]/10 to-transparent" />
+                  <span className="absolute left-5 top-5 rounded-full border border-white/30 bg-white/15 px-3 py-1.5 text-xs font-bold tracking-[0.16em] text-white shadow-lg backdrop-blur-md">
+                    SERVICE {service.number}
+                  </span>
+                  <div className="absolute bottom-4 right-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/30 bg-white/90 text-[#536A0D] shadow-lg backdrop-blur-md transition duration-300 group-hover:-translate-y-1 group-hover:bg-[#A8BD63] group-hover:text-[#263206]">
+                    <service.icon size={23} strokeWidth={1.8} />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white">
-                  {service.title}
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-white/70">
-                  {service.description}
-                </p>
-                <Link
-                  href="#contact"
-                  className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#C1D38D] transition group-hover:gap-3"
-                >
-                  Discuss service <ArrowRight size={16} />
-                </Link>
-              </motion.div>
+
+                <div className="flex flex-1 flex-col p-6 sm:p-7">
+                  <h3 className="min-h-[58px] text-xl font-bold leading-snug text-[#3A4A09] sm:text-[1.35rem]">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 min-h-[76px] text-sm leading-7 text-[#68715C]">
+                    {service.description}
+                  </p>
+                  <div className="mt-6 flex items-center justify-between border-t border-[#E9EDE2] pt-5">
+                    <Link
+                      href="#contact"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-[#536A0D] transition-all duration-300 group-hover:gap-3 group-hover:text-[#263206]"
+                    >
+                      Discuss your needs <ArrowUpRight size={16} />
+                    </Link>
+                    <span className="text-xs font-semibold tracking-widest text-[#AAB697]">{service.number}</span>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#A8BD63] transition-all duration-500 group-hover:w-full" />
+              </motion.article>
             ))}
           </div>
-        </div>
-      </section> */}
-
-      {/* LOGISTICS - WHITE */}
-      {/* <section className="bg-white py-24 lg:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
-          <div>
-            <SectionHeading
-              eyebrow="Our Approach"
-              title="Moving Products. Building Connections."
-              description="International trade involves more than moving goods. It takes coordination, communication and an understanding of the requirements at every stage."
-            />
-
-            <div className="mt-9 space-y-6">
-              {[
-                {
-                  icon: Search,
-                  title: "Understand Your Requirements",
-                  text: "We begin by understanding your products, quantities and destination market.",
-                },
-                {
-                  icon: Handshake,
-                  title: "Coordinate the Right Connections",
-                  text: "We work to connect buyers, suppliers and relevant trade partners.",
-                },
-                {
-                  icon: Ship,
-                  title: "Support the Export Process",
-                  text: "We coordinate logistics and documentation requirements throughout the process.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF1E5] text-[#536A0D]">
-                    <item.icon size={23} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#3A4A09]">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-[#626A51]">
-                      {item.text}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <Link href="#contact" className={`${buttonClass} mt-9`}>
-              Start a Conversation <ArrowRight size={17} />
-            </Link>
-          </div>
-
-          <div className="relative">
-            <img
-              src={images.shipping}
-              alt="International logistics and shipping"
-              className="h-[460px] w-full rounded-[1.7rem] object-cover"
-            />
-            <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/95 p-5 shadow-xl backdrop-blur">
-              <div className="flex items-center gap-4">
-                <div className="rounded-xl bg-[#EEF1E5] p-3 text-[#536A0D]">
-                  <Globe2 size={25} />
-                </div>
-                <div>
-                  <p className="font-bold text-[#3A4A09]">
-                    International Trade Coordination
-                  </p>
-                  <p className="mt-1 text-xs text-[#626A51]">
-                    Connecting businesses across borders
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* TEAM - DARK OLIVE */}
-      {/* <section id="team" className="bg-[#263206] py-24 lg:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:px-8">
-          <div>
-            <SectionHeading
-              eyebrow="Our Commitment"
-              title="A Partnership Approach to Global Trade"
-              description="We believe strong business relationships are built through communication, transparency and a shared commitment to quality."
-              light
-            />
-            <div className="mt-8 flex items-start gap-4">
-              <div className="rounded-xl bg-[#A8BD63] p-3 text-[#263206]">
-                <Handshake size={25} />
-              </div>
-              <div>
-                <h3 className="font-bold text-white">
-                  Relationships That Matter
-                </h3>
-                <p className="mt-2 text-sm leading-7 text-white/65">
-                  We value long-term relationships with suppliers, buyers and
-                  business partners.
-                </p>
-              </div>
-            </div>
-            <div className="mt-6 flex items-start gap-4">
-              <div className="rounded-xl bg-[#A8BD63] p-3 text-[#263206]">
-                <ShieldCheck size={25} />
-              </div>
-              <div>
-                <h3 className="font-bold text-white">
-                  Focused on Dependability
-                </h3>
-                <p className="mt-2 text-sm leading-7 text-white/65">
-                  We aim to provide clear communication and dependable
-                  coordination throughout the trade process.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-white/10 bg-[#3A4A09] p-8 sm:p-10">
-            <SectionLabel light>Let's Work Together</SectionLabel>
-            <h3 className="text-3xl font-bold leading-tight text-white sm:text-4xl">
-              Have a product or market opportunity in mind?
-            </h3>
-            <p className="mt-5 text-sm leading-7 text-white/70">
-              Tell us about your business and requirements. We would be glad to
-              explore how we can support your international trade goals.
-            </p>
-            <Link href="#contact" className={`${buttonClass} mt-8`}>
-              Connect With Our Team <ArrowUpRight size={17} />
+          <div className="mt-5 flex items-center justify-between gap-4">
+            <p className="text-xs text-[#7A846B]">Swipe or use the arrows to explore all services.</p>
+            <Link href="#contact" className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-[#536A0D] transition hover:text-[#263206]">
+              Talk to our team <ArrowRight size={16} />
             </Link>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* FAQ - WHITE */}
-     
-{/* FAQ SECTION */}
+      {/* FAQ SECTION */}
 <section className="relative overflow-hidden bg-[#f6faea] py-20 lg:py-24">
   {/* Decorative background */}
   <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full border border-[#A8BD63]/20" />
