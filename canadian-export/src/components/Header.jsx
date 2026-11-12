@@ -13,9 +13,9 @@ import {
 
 const navigation = [
   { label: "About Us", href: "/about" },
-  { label: "Our Services", href: "/#services" },
-  { label: "Our Team", href: "/#team" },
-  { label: "Contact Us", href: "/#contact" },
+  { label: "Our Services", href: "/our-services" },
+  { label: "Our Team", href: "/our-team" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 // Website search references
