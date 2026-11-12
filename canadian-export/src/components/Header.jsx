@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 const navigation = [
-  { label: "About Us", href: "/#about" },
+  { label: "About Us", href: "/about" },
   { label: "Our Services", href: "/#services" },
   { label: "Our Team", href: "/#team" },
   { label: "Contact Us", href: "/#contact" },

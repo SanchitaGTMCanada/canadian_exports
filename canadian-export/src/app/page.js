@@ -38,7 +38,7 @@ const images = {
 
 const navigation = [
   { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
+  { label: "About Us", href: "/about" },
   { label: "Our Services", href: "#services" },
   { label: "Our Team", href: "#team" },
   { label: "Contact Us", href: "#contact" },
