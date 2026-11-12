@@ -1,9 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useRef } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
+  ChevronLeft,
+  ChevronRight,
   Mail,
   Phone,
   MapPin,
@@ -25,9 +28,9 @@ import { motion } from "framer-motion";
 import Header from "../../components/Header";
 
 const images = {
-  hero: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1400&q=90",
+  hero: "/images/about/about-hero.png",
   company: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85",
-  mission: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=85",
+  mission: "/images/about/aboutmission.jpg",
 };
 
 const values = [
@@ -37,27 +40,31 @@ const values = [
     description:
       "We are dedicated to innovation and sustainability, fostering a culture of excellence that addresses environmental, social, and economic challenges. Through responsible practices and partnerships, we aim to continuously enhance our services while contributing to a more sustainable and equitable global food system.",
     icon: Package,
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=85",
   },
   {
     number: "02",
-    title: "Integrity and Transparency",
+    title: "Sustainability and Environmental Respect",
     description:
-      "We believe in clear communication, responsible sourcing, and dependable relationships. We work to make every stage of the trading and export process transparent, accountable, and focused on long-term trust.",
+      "We prioritize sustainable practices in food sourcing and logistics, minimizing environmental impact while maximizing efficiency. By embracing renewable resources, reducing waste, and adopting eco-friendly technologies, we ensure that our operations respect the natural world and support a healthy, thriving planet for future generations.",
     icon: ShieldCheck,
+    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=85",
   },
   {
     number: "03",
-    title: "Sustainable Partnerships",
+    title: "Innovation and Technological Advancement",
     description:
-      "We value lasting relationships with producers, suppliers, and customers. By respecting communities and the environment, we aim to support responsible growth across the agricultural supply chain.",
+      "We are committed to leveraging cutting-edge technologies to redefine global food ingredient distribution. By continuously exploring innovative logistics solutions and embracing advancements in automation, data-driven optimization, and sustainable practices, we aim to set new standards of efficiency and reliability in the industry.",
     icon: Handshake,
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85",
   },
   {
     number: "04",
-    title: "Customer Commitment",
+    title: "Global Engagement",
     description:
-      "We listen carefully to our customers and coordinate solutions around their requirements. Our focus is on dependable service, thoughtful communication, and consistent attention to quality.",
+      "Recognizing the interconnected nature of global markets, we embrace cultural diversity and collaboration. Our mission is to build bridges between communities, facilitating mutual respect and understanding while delivering exceptional natural food solutions to the world.",
     icon: Globe2,
+    image: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=85",
   },
 ];
 
@@ -103,6 +110,20 @@ function OutlinePattern({ light = false }) {
 }
 
 export default function AboutPage() {
+  const valuesTrackRef = useRef(null);
+
+  const scrollValues = (direction) => {
+    const track = valuesTrackRef.current;
+    if (!track) return;
+    const card = track.querySelector("[data-value-card]");
+    if (!card) return;
+
+    track.scrollBy({
+      left: direction * (card.getBoundingClientRect().width + 20),
+      behavior: "smooth",
+    });
+  };
+
   return (
     <main className="overflow-hidden bg-white text-[#252925]" style={{ fontFamily: "'Manrope', sans-serif" }}>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -127,9 +148,9 @@ export default function AboutPage() {
             <h1 className="mt-5 text-[2.8rem] font-extrabold leading-[1.08] tracking-[-0.055em] text-white sm:text-6xl lg:text-[4.25rem]">
               About <span className="text-[#C1D38D]">Us.</span>
             </h1>
-            <p className="mt-6 max-w-lg text-sm leading-7 text-white/85 sm:text-base sm:leading-8">
-              Connecting trusted Canadian producers with buyers across international markets through dependable sourcing, trade coordination and export solutions.
-            </p>
+            {/* <p className="mt-6 max-w-lg text-sm leading-7 text-white/85 sm:text-base sm:leading-8">
+              Canadiana Exports is a Canada-based international trading company specializing in the export of Potash (MOP) and high-quality agricultural pulses. Rooted in Canada’s globally respected agri-commodity and mineral supply base, we connect reliable Canadian producers with buyers across international markets.
+            </p> */}
             <Link
               href="/#contact"
               className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#B5CC68] px-6 py-3.5 text-xs font-extrabold text-[#263206] shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:bg-[#C5D98A]"
@@ -161,19 +182,26 @@ export default function AboutPage() {
       </section>
 
       {/* TRUST STRIP — same compact icon row as homepage */}
-      <section className="border-b border-[#EDEFE9] bg-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-5 px-5 py-6 sm:grid-cols-4 sm:py-7 lg:px-8">
-          {trustItems.map(({ label, icon: Icon }) => (
-            <div key={label} className="flex items-center justify-center gap-2.5 text-[11px] font-extrabold text-[#343A31] sm:text-xs">
-              <Icon size={16} className="text-[#8FA94C]" strokeWidth={1.8} />
-              {label}
-            </div>
-          ))}
-        </div>
-      </section>
+   <section className="border-b border-[#EDEFE9] bg-white">
+  <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-6 px-5 py-7 sm:grid-cols-4 sm:gap-5 sm:py-8 lg:px-8">
+    {trustItems.map(({ label, icon: Icon }) => (
+      <div
+        key={label}
+        className="flex items-center justify-center gap-3 text-sm font-extrabold text-[#343A31] sm:text-base"
+      >
+        <Icon
+          size={21}
+          className="shrink-0 text-[#8FA94C]"
+          strokeWidth={1.9}
+        />
+        <span>{label}</span>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* WHO WE ARE — homepage white two-column treatment */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-14 sm:py-10 lg:py-14">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <motion.div
             initial={{ opacity: 0, x: -22 }}
@@ -229,7 +257,7 @@ export default function AboutPage() {
       </section>
 
       {/* MISSION & VISION — same charcoal section treatment as homepage services */}
-      <section className="relative overflow-hidden bg-[#242424] py-16 text-white sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-[#242424] py-14 text-white sm:py-10 lg:py-14">
         <OutlinePattern light />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-8">
           <motion.div
@@ -278,9 +306,9 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES — clean light background and cards styled like homepage content */}
-      <section className="bg-[#F1F2EF] py-16 sm:py-20 lg:py-24">
+      <section className="bg-[#F1F2EF] py-14 sm:py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
+          <div className="mx-auto mb-3 max-w-2xl text-center sm:mb-12">
             <Eyebrow>What Guides Us</Eyebrow>
             <h2 className="mt-4 text-3xl font-extrabold leading-[1.13] tracking-[-0.045em] text-[#252925] sm:text-4xl lg:text-[2.8rem]">
               The values behind every <span className="text-[#718A50]">partnership.</span>
@@ -290,25 +318,64 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map(({ number, title, description, icon: Icon }, index) => (
+          <div className="mb-6 flex items-center justify-end gap-3">
+            <button
+              type="button"
+              onClick={() => scrollValues(-1)}
+              aria-label="Previous values"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#DDE4D3] bg-white text-[#536A3B] shadow-sm transition hover:border-[#A8BD63] hover:bg-[#A8BD63] hover:text-[#263206] focus:outline-none focus:ring-2 focus:ring-[#A8BD63] focus:ring-offset-2"
+            >
+              <ChevronLeft size={21} />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollValues(1)}
+              aria-label="Next values"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#DDE4D3] bg-white text-[#536A3B] shadow-sm transition hover:border-[#A8BD63] hover:bg-[#A8BD63] hover:text-[#263206] focus:outline-none focus:ring-2 focus:ring-[#A8BD63] focus:ring-offset-2"
+            >
+              <ChevronRight size={21} />
+            </button>
+          </div>
+
+          <div
+            ref={valuesTrackRef}
+            className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-5"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {values.map(({ number, title, description, icon: Icon, image }, index) => (
               <motion.article
                 key={number}
+                data-value-card
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
-                className="group flex min-h-[300px] flex-col rounded-[1.15rem] border border-[#E3E6DE] bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl sm:p-7"
+                className="group flex min-h-[440px] w-full shrink-0 snap-start flex-col overflow-hidden rounded-[1.15rem] border border-[#E3E6DE] bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl sm:w-[calc(50%-10px)] xl:w-[calc(33.333%-13.34px)]"
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EEF2E7] text-[#718A50] transition group-hover:bg-[#A8BD63] group-hover:text-[#263206]">
-                    <Icon size={21} strokeWidth={1.8} />
-                  </div>
-                  <span className="text-[10px] font-extrabold tracking-[0.2em] text-[#A5AA9F]">{number}</span>
+                <div className="relative h-[170px] shrink-0 overflow-hidden sm:h-[185px]">
+                  <img
+                    src={image}
+                    alt={`${title} - Canadiana Exports`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#172219]/55 via-transparent to-transparent" />
+                  {/* <span className="absolute bottom-4 left-5 rounded-full border border-white/25 bg-[#1E2805]/70 px-3 py-1.5 text-[10px] font-extrabold tracking-[0.18em] text-white backdrop-blur-sm">
+                    VALUE {number}
+                  </span> */}
                 </div>
-                <h3 className="mt-6 text-lg font-extrabold leading-snug tracking-[-0.025em] text-[#292E28]">{title}</h3>
-                <p className="mt-3 flex-1 text-[12px] leading-[1.85] text-[#747B72] sm:text-[13px]">{description}</p>
+
+                <div className="flex flex-1 flex-col p-6 sm:p-7">
+                <div className="flex items-center justify-between">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#EEF2E7] text-[#718A50] transition group-hover:bg-[#A8BD63] group-hover:text-[#263206]">
+                    <Icon size={22} strokeWidth={1.8} />
+                  </div>
+                  <span className="text-xs font-extrabold tracking-[0.2em] text-[#A5AA9F]">{number}</span>
+                </div>
+                <h3 className="mt-6 text-xl font-extrabold leading-snug tracking-[-0.025em] text-[#292E28]">{title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-[1.9] text-[#747B72]">{description}</p>
                 <div className="mt-6 h-1 w-9 rounded-full bg-[#A8BD63] transition-all group-hover:w-14" />
+                </div>
               </motion.article>
             ))}
           </div>

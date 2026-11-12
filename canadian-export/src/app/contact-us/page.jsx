@@ -161,11 +161,19 @@ export default function ContactUsPage() {
           >
             <div className="absolute -right-3 -top-3 h-28 w-28 rounded-tr-[2rem] border-r border-t border-white/30 sm:-right-4 sm:-top-4 sm:h-36 sm:w-36" />
             <div className="relative overflow-hidden rounded-[1.4rem] border border-white/20 shadow-2xl shadow-[#1E2805]/25 sm:rounded-[1.8rem]">
-              <img
-                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=90"
-                alt="Business professionals discussing a partnership"
+              <video
                 className="h-[250px] w-full object-cover sm:h-[310px] lg:h-[330px]"
-              />
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=90"
+                aria-label="Canadiana Exports business and global trade video"
+              >
+                <source src="/videoes/contact-hero.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
               <div className="absolute inset-0 bg-gradient-to-t from-[#172219]/50 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-xl border border-white/20 bg-[#1E2805]/70 px-4 py-3 text-white backdrop-blur-md">
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#B5CC68] text-[#263206]">
@@ -183,7 +191,7 @@ export default function ContactUsPage() {
 
       {/* TRUST STRIP */}
       <section className="border-b border-[#EDEFE9] bg-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-5 px-5 py-6 sm:grid-cols-4 sm:py-7 lg:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-6 px-5 py-7 sm:grid-cols-4 sm:gap-5 sm:py-8 lg:px-8">
           {[
             { label: "Quality Focused", icon: CheckCircle2 },
             { label: "Global Network", icon: Globe2 },
@@ -192,10 +200,14 @@ export default function ContactUsPage() {
           ].map(({ label, icon: Icon }) => (
             <div
               key={label}
-              className="flex items-center justify-center gap-2.5 text-[11px] font-extrabold text-[#343A31] sm:text-xs"
+              className="flex items-center justify-center gap-3 text-sm font-extrabold text-[#343A31] sm:text-base"
             >
-              <Icon size={16} className="text-[#8FA94C]" strokeWidth={1.8} />
-              {label}
+              <Icon
+                size={21}
+                className="shrink-0 text-[#8FA94C]"
+                strokeWidth={1.9}
+              />
+              <span>{label}</span>
             </div>
           ))}
         </div>
@@ -244,7 +256,7 @@ export default function ContactUsPage() {
       </section>
 
       {/* MESSAGE FORM + CONTACT PANEL */}
-      <section className="bg-[#F1F2EF] py-16 sm:py-20 lg:py-24">
+      {/* <section className="bg-[#F1F2EF] py-16 sm:py-20 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12 lg:px-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -383,7 +395,7 @@ export default function ContactUsPage() {
             </form>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* MAP / LOCATION */}
       <section className="bg-white px-5 py-14 sm:py-16">
