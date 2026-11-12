@@ -257,7 +257,7 @@ export default function Home() {
       </div>
     </motion.div>
 
-    {/* RIGHT IMAGE */}
+    {/* RIGHT VIDEO */}
     <motion.div
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -267,16 +267,24 @@ export default function Home() {
       <div className="absolute -right-5 -top-5 h-36 w-36 rounded-full border border-white/40" />
 
       <div className="relative overflow-hidden rounded-[2rem] border border-white/40 shadow-2xl">
-        <img
-          src={images.shipping}
-          alt="Cargo containers ready for export"
+        <video
           className="h-[490px] w-full object-cover"
-        />
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={images.shipping}
+          aria-label="Canadiana Exports logistics and shipping video"
+        >
+          <source src="/videos/home-hero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#263206]/30 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#263206]/30 via-transparent to-transparent" />
 
         {/* GLOBE ICON */}
-        <div className="absolute bottom-7 left-7">
+        <div className="pointer-events-none absolute bottom-7 left-7">
           <div className="flex w-fit items-center justify-center rounded-xl border border-white/30 bg-white/20 p-4 text-white shadow-lg backdrop-blur-md">
             <Globe2 size={28} />
           </div>

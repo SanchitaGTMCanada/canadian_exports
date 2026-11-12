@@ -86,7 +86,7 @@ const trustItems = [
 function Eyebrow({ children, light = false }) {
   return (
     <span
-      className={`inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.24em] ${
+      className={`inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.16em] sm:text-sm ${
         light ? "text-[#C1D38D]" : "text-[#8FA94C]"
       }`}
     >
@@ -145,7 +145,7 @@ export default function AboutPage() {
             className="relative z-10 max-w-xl"
           >
             <Eyebrow light>Welcome to Canadiana Exports</Eyebrow>
-            <h1 className="mt-5 text-[2.8rem] font-extrabold leading-[1.08] tracking-[-0.055em] text-white sm:text-6xl lg:text-[4.25rem]">
+            <h1 className="mt-5 text-[2.75rem] font-extrabold leading-[1.08] tracking-[-0.05em] text-white sm:text-[3.5rem] lg:text-[4rem]">
               About <span className="text-[#C1D38D]">Us.</span>
             </h1>
             {/* <p className="mt-6 max-w-lg text-sm leading-7 text-white/85 sm:text-base sm:leading-8">
@@ -153,7 +153,7 @@ export default function AboutPage() {
             </p> */}
             <Link
               href="/#contact"
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#B5CC68] px-6 py-3.5 text-xs font-extrabold text-[#263206] shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:bg-[#C5D98A]"
+              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#B5CC68] px-6 py-3.5 text-sm font-extrabold text-[#263206] shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:bg-[#C5D98A]"
             >
               Connect With Us <ArrowRight size={15} />
             </Link>
@@ -224,35 +224,63 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 22 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.55 }}
-            className="order-1 lg:order-2"
-          >
-            <Eyebrow>About Canadiana Exports</Eyebrow>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.13] tracking-[-0.045em] text-[#252925] sm:text-4xl lg:text-[2.8rem]">
-              Canadian exports. <span className="text-[#718A50]">Global connections.</span>
-            </h2>
-            <div className="mt-6 space-y-4 text-[13px] leading-[1.9] text-[#737B72] sm:text-sm sm:leading-7">
-              <p>
-                <strong className="font-extrabold text-[#303830]">Canadiana Exports</strong> is a Canada-based international trading company specializing in the export of <strong className="font-bold text-[#303830]">Potash (MOP)</strong> and <strong className="font-bold text-[#303830]">high-quality agricultural pulses.</strong> Rooted in Canada&apos;s globally respected agri-commodity and mineral supply base, we connect reliable Canadian producers with buyers across international markets.
-              </p>
-              <p>
-                Our business is built on <strong className="font-bold text-[#303830]">consistency, compliance, and long-term partnerships.</strong> We work closely with fertilizer distributors, agri-input companies, food processors, wholesalers, and government buyers to deliver products that meet strict quality, regulatory, and logistical requirements.
-              </p>
-              <p>
-                Canada&apos;s reputation for <strong className="font-bold text-[#303830]">ethical sourcing, advanced infrastructure, and transparent trade practices</strong> underpins every shipment we deliver.
-              </p>
-            </div>
-            <Link
-              href="/#contact"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#A8BD63] px-6 py-3 text-xs font-extrabold text-[#263206] transition hover:-translate-y-0.5 hover:bg-[#BBD17B]"
-            >
-              Learn More About Us <ArrowUpRight size={15} />
-            </Link>
-          </motion.div>
+       <motion.div
+  initial={{ opacity: 0, x: 22 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.55 }}
+  className="order-1 lg:order-2"
+>
+  <Eyebrow>About Canadiana Exports</Eyebrow>
+
+  <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-[-0.04em] text-[#252925] sm:text-[2.5rem] lg:text-[2.75rem]">
+    Canadian exports.{" "}
+    <span className="text-[#718A50]">Global connections.</span>
+  </h2>
+
+  <div className="mt-6 space-y-5 text-base leading-[1.8] text-[#454D43] sm:text-lg">
+    <p>
+      <strong className="font-extrabold text-[#252925]">
+        Canadiana Exports
+      </strong>{" "}
+      is a Canada-based international trading company specializing in the
+      export of{" "}
+      <strong className="font-bold text-[#252925]">Potash (MOP)</strong> and{" "}
+      <strong className="font-bold text-[#252925]">
+        high-quality agricultural pulses.
+      </strong>{" "}
+      Rooted in Canada&apos;s globally respected agri-commodity and mineral
+      supply base, we connect reliable Canadian producers with buyers across
+      international markets.
+    </p>
+
+    <p>
+      Our business is built on{" "}
+      <strong className="font-bold text-[#252925]">
+        consistency, compliance, and long-term partnerships.
+      </strong>{" "}
+      We work closely with fertilizer distributors, agri-input companies,
+      food processors, wholesalers, and government buyers to deliver products
+      that meet strict quality, regulatory, and logistical requirements.
+    </p>
+
+    <p>
+      Canada&apos;s reputation for{" "}
+      <strong className="font-bold text-[#252925]">
+        ethical sourcing, advanced infrastructure, and transparent trade
+        practices
+      </strong>{" "}
+      underpins every shipment we deliver.
+    </p>
+  </div>
+
+  <Link
+    href="/#contact"
+    className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#A8BD63] px-7 py-3.5 text-sm font-extrabold text-[#263206] sm:text-base transition hover:-translate-y-0.5 hover:bg-[#BBD17B]"
+  >
+    Learn More About Us <ArrowUpRight size={18} />
+  </Link>
+</motion.div>
         </div>
       </section>
 
@@ -286,20 +314,35 @@ export default function AboutPage() {
             transition={{ duration: 0.55 }}
             className="space-y-9"
           >
-            <div>
-              <Eyebrow light>Our Purpose</Eyebrow>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] text-white sm:text-4xl">Our Mission</h2>
-              <p className="mt-4 text-[13px] leading-7 text-white/65 sm:text-sm sm:leading-8">
-                To efficiently connect the finest natural food ingredients from Canada to global markets through advanced logistics solutions. Guided by sustainability and Indigenous values of respect for the environment, reciprocity, and community, we aim to provide seamless delivery while upholding a deep commitment to cultural and ecological stewardship.
-              </p>
-            </div>
+          <div>
+  <Eyebrow light>Our Purpose</Eyebrow>
+
+  <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] text-white sm:text-[2.5rem]">
+    Our Mission
+  </h2>
+
+  <p className="mt-5 text-base leading-[1.8] text-white/90 sm:text-lg">
+    To efficiently connect the finest natural food ingredients from Canada
+    to global markets through advanced logistics solutions. Guided by
+    sustainability and Indigenous values of respect for the environment,
+    reciprocity, and community, we aim to provide seamless delivery while
+    upholding a deep commitment to cultural and ecological stewardship.
+  </p>
+</div>
             <div className="h-px w-full bg-white/15" />
             <div>
               <Eyebrow light>Our Direction</Eyebrow>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] text-white sm:text-4xl">Our Vision</h2>
-              <p className="mt-4 text-[13px] leading-7 text-white/65 sm:text-sm sm:leading-8">
-                To be the global leader in sustainable food ingredient logistics, recognized for our respect for the natural world, innovative solutions, and commitment to bridging cultures and communities. We envision a future where every shipment reflects our dedication to excellence, environmental preservation, and the principles of mutual respect and reciprocity.
-              </p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] text-white sm:text-[2.5rem]">
+  Our Vision
+</h2>
+
+<p className="mt-5 text-base leading-[1.8] text-white/90 sm:text-lg">
+  To be the global leader in sustainable food ingredient logistics,
+  recognized for our respect for the natural world, innovative solutions,
+  and commitment to bridging cultures and communities. We envision a future
+  where every shipment reflects our dedication to excellence, environmental
+  preservation, and the principles of mutual respect and reciprocity.
+</p>
             </div>
           </motion.div>
         </div>
@@ -308,15 +351,19 @@ export default function AboutPage() {
       {/* VALUES — clean light background and cards styled like homepage content */}
       <section className="bg-[#F1F2EF] py-14 sm:py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="mx-auto mb-3 max-w-2xl text-center sm:mb-12">
-            <Eyebrow>What Guides Us</Eyebrow>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.13] tracking-[-0.045em] text-[#252925] sm:text-4xl lg:text-[2.8rem]">
-              The values behind every <span className="text-[#718A50]">partnership.</span>
-            </h2>
-            <p className="mt-4 text-[13px] leading-7 text-[#777D74] sm:text-sm">
-              Our principles shape how we work with producers, customers, and partners across the global supply chain.
-            </p>
-          </div>
+    <div className="mx-auto mb-3 max-w-3xl text-center sm:mb-12">
+  <Eyebrow>What Guides Us</Eyebrow>
+
+  <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-[-0.04em] text-[#252925] sm:text-[2.5rem] lg:text-[2.75rem]">
+    The values behind every{" "}
+    <span className="text-[#718A50]">partnership.</span>
+  </h2>
+
+  <p className="mx-auto mt-5 max-w-2xl text-base leading-[1.8] text-[#454D43] sm:text-lg">
+    Our principles shape how we work with producers, customers, and partners
+    across the global supply chain.
+  </p>
+</div>
 
           <div className="mb-6 flex items-center justify-end gap-3">
             <button
@@ -337,134 +384,215 @@ export default function AboutPage() {
             </button>
           </div>
 
-          <div
-            ref={valuesTrackRef}
-            className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-5"
-            style={{ scrollbarWidth: "none" }}
-          >
-            {values.map(({ number, title, description, icon: Icon, image }, index) => (
-              <motion.article
-                key={number}
-                data-value-card
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
-                className="group flex min-h-[440px] w-full shrink-0 snap-start flex-col overflow-hidden rounded-[1.15rem] border border-[#E3E6DE] bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl sm:w-[calc(50%-10px)] xl:w-[calc(33.333%-13.34px)]"
-              >
-                <div className="relative h-[170px] shrink-0 overflow-hidden sm:h-[185px]">
-                  <img
-                    src={image}
-                    alt={`${title} - Canadiana Exports`}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#172219]/55 via-transparent to-transparent" />
-                  {/* <span className="absolute bottom-4 left-5 rounded-full border border-white/25 bg-[#1E2805]/70 px-3 py-1.5 text-[10px] font-extrabold tracking-[0.18em] text-white backdrop-blur-sm">
-                    VALUE {number}
-                  </span> */}
-                </div>
+         <div
+  ref={valuesTrackRef}
+  className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-5"
+  style={{ scrollbarWidth: "none" }}
+>
+  {values.map(({ number, title, description, icon: Icon, image }, index) => (
+    <motion.article
+      key={number}
+      data-value-card
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.45, delay: index * 0.06 }}
+      className="group flex min-h-[490px] w-full shrink-0 snap-start flex-col overflow-hidden rounded-[1.15rem] border border-[#E3E6DE] bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl sm:w-[calc(50%-10px)] xl:w-[calc(33.333%-13.34px)]"
+    >
+      <div className="relative h-[190px] shrink-0 overflow-hidden sm:h-[210px]">
+        <img
+          src={image}
+          alt={`${title} - Canadiana Exports`}
+          loading="lazy"
+          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#172219]/55 via-transparent to-transparent" />
+      </div>
 
-                <div className="flex flex-1 flex-col p-6 sm:p-7">
-                <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#EEF2E7] text-[#718A50] transition group-hover:bg-[#A8BD63] group-hover:text-[#263206]">
-                    <Icon size={22} strokeWidth={1.8} />
-                  </div>
-                  <span className="text-xs font-extrabold tracking-[0.2em] text-[#A5AA9F]">{number}</span>
-                </div>
-                <h3 className="mt-6 text-xl font-extrabold leading-snug tracking-[-0.025em] text-[#292E28]">{title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-[1.9] text-[#747B72]">{description}</p>
-                <div className="mt-6 h-1 w-9 rounded-full bg-[#A8BD63] transition-all group-hover:w-14" />
-                </div>
-              </motion.article>
-            ))}
+      <div className="flex flex-1 flex-col p-6 sm:p-8">
+        <div className="flex items-center justify-between">
+          <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#EEF2E7] text-[#718A50] transition group-hover:bg-[#A8BD63] group-hover:text-[#263206]">
+            <Icon size={25} strokeWidth={1.8} />
           </div>
+
+          <span className="text-sm font-extrabold tracking-[0.16em] text-[#555D53]">
+            {number}
+          </span>
+        </div>
+
+        <h3 className="mt-6 text-xl font-extrabold leading-snug tracking-[-0.025em] text-[#252925] sm:text-2xl">
+          {title}
+        </h3>
+
+        <p className="mt-4 flex-1 text-base leading-[1.8] text-[#454D43]">
+          {description}
+        </p>
+
+        <div className="mt-7 h-1 w-10 rounded-full bg-[#A8BD63] transition-all group-hover:w-16" />
+      </div>
+    </motion.article>
+  ))}
+</div>
         </div>
       </section>
 
-      {/* CTA — repeat the homepage green gradient and contact-card language */}
-      <section className="bg-white px-5 py-14 sm:py-16 lg:py-20">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[1.4rem] bg-gradient-to-r from-[#354A25] via-[#536A3B] to-[#718A50] px-6 py-9 shadow-xl shadow-[#1E2805]/15 sm:rounded-[1.6rem] sm:px-10 sm:py-12 lg:px-12">
-          <OutlinePattern light />
-          <div className="relative grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
-              <Eyebrow light>Let&apos;s Work Together</Eyebrow>
-              <h2 className="mt-4 max-w-xl text-3xl font-extrabold leading-[1.13] tracking-[-0.045em] text-white sm:text-4xl">
-                Building stronger connections across global markets.
-              </h2>
-              <p className="mt-4 max-w-lg text-[13px] leading-7 text-white/80 sm:text-sm">
-                Speak with our team about your sourcing and export requirements. We&apos;re ready to help you move forward.
-              </p>
-              <Link
-                href="/#contact"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-xs font-extrabold text-[#263206] transition hover:-translate-y-0.5 hover:bg-[#EFF3E7]"
-              >
-                Contact Us <ArrowRight size={15} />
-              </Link>
-            </div>
+{/* CTA — larger typography and improved readability */}
+<section className="bg-white px-5 py-14 sm:py-16 lg:py-20">
+  <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[1.4rem] bg-gradient-to-r from-[#354A25] via-[#536A3B] to-[#718A50] px-6 py-10 shadow-xl shadow-[#1E2805]/15 sm:rounded-[1.6rem] sm:px-10 sm:py-14 lg:px-12 lg:py-16">
+    <OutlinePattern light />
 
-            <div className="rounded-xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur-md sm:p-6">
-              <div className="flex items-center gap-3 border-b border-white/20 pb-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15 text-white"><Mail size={18} /></span>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/65">Email</p>
-                  <a href="mailto:info@canadianaexports.ca" className="mt-1 block text-sm font-bold text-white">info@canadianaexports.ca</a>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 border-b border-white/20 py-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15 text-white"><Phone size={18} /></span>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/65">Phone</p>
-                  <a href="tel:+18676690242" className="mt-1 block text-sm font-bold text-white">+1 867-669-0242</a>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 pt-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/15 text-white"><MapPin size={18} /></span>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/65">Address</p>
-                  <p className="mt-1 text-sm font-bold leading-6 text-white">PO Box 20072, 4910-50th Street, Yellowknife, NT X1A 3X8, Canada</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+      <div>
+        <Eyebrow light>Let&apos;s Work Together</Eyebrow>
 
-      {/* FOOTER — same dark olive footer as homepage */}
-      <footer className="bg-[#1E2805] text-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.7fr_0.9fr] lg:px-8">
+        <h2 className="mt-5 max-w-xl text-3xl font-extrabold leading-[1.15] tracking-[-0.04em] text-white sm:text-[2.5rem] lg:text-[2.75rem]">
+          Building stronger connections across global markets.
+        </h2>
+
+        <p className="mt-5 max-w-lg text-base leading-[1.8] text-white/90 sm:text-lg">
+          Speak with our team about your sourcing and export requirements.
+          We&apos;re ready to help you move forward.
+        </p>
+
+        <Link
+          href="/#contact"
+          className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-extrabold text-[#263206] sm:text-base shadow-lg transition hover:-translate-y-1 hover:bg-[#EFF3E7]"
+        >
+          Contact Us <ArrowRight size={19} />
+        </Link>
+      </div>
+
+      <div className="rounded-2xl border border-white/25 bg-white/10 p-6 shadow-lg backdrop-blur-md sm:p-8">
+        <div className="flex items-center gap-4 border-b border-white/20 pb-5">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white">
+            <Mail size={22} />
+          </span>
           <div>
-            <Link href="/" className="inline-flex items-center">
-              <img src="/logo/logo.jpg" alt="Canadiana Exports" className="h-14 w-auto rounded-lg bg-white p-1 object-contain" />
-            </Link>
-            <p className="mt-5 max-w-sm text-[12px] leading-6 text-white/65">
-              Connecting Canadian quality with international opportunities through sourcing, trade coordination and export solutions.
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/85 sm:text-sm">
+              Email
+            </p>
+            <a
+              href="mailto:info@canadianaexports.ca"
+              className="mt-1 block text-base font-semibold text-white transition hover:text-[#D6E6A5]"
+            >
+              info@canadianaexports.ca
+            </a>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-4 border-b border-white/20 py-5">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white">
+            <Phone size={22} />
+          </span>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/85 sm:text-sm">
+              Phone
+            </p>
+            <a
+              href="tel:+18676690242"
+              className="mt-1 block text-base font-semibold text-white transition hover:text-[#D6E6A5]"
+            >
+              +1 867-669-0242
+            </a>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-4 pt-5">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white">
+            <MapPin size={22} />
+          </span>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/85 sm:text-sm">
+              Address
+            </p>
+            <p className="mt-1 text-base font-semibold leading-7 text-white">
+              PO Box 20072, 4910-50th Street, Yellowknife, NT X1A 3X8, Canada
             </p>
           </div>
-          <div>
-            <h3 className="text-xs font-extrabold text-[#C1D38D]">Quick Links</h3>
-            <div className="mt-4 flex flex-col gap-2.5">
-              {quickLinks.map((item) => (
-                <Link key={item.label} href={item.href} className="text-[12px] text-white/70 transition hover:text-[#C1D38D]">{item.label}</Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className="text-xs font-extrabold text-[#C1D38D]">Contact</h3>
-            <div className="mt-4 space-y-3 text-[12px] text-white/70">
-              <a href="mailto:info@canadianaexports.ca" className="block transition hover:text-[#C1D38D]">info@canadianaexports.ca</a>
-              <a href="tel:+18676690242" className="block transition hover:text-[#C1D38D]">+1 867-669-0242</a>
-              <p>Yellowknife, NT, Canada</p>
-            </div>
-          </div>
         </div>
-        <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-col justify-between gap-2 px-5 py-5 text-[10px] text-white/40 sm:flex-row lg:px-8">
-            <p>© {new Date().getFullYear()} Canadiana Exports. All rights reserved.</p>
-            <p>Connecting Canadian Quality to Global Markets.</p>
-          </div>
-        </div>
-      </footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+  {/* FOOTER — larger typography and improved readability */}
+<footer className="bg-[#1E2805] text-white">
+  <div className="mx-auto grid max-w-7xl gap-12 px-5 py-14 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.7fr_0.9fr] lg:px-8 lg:py-16">
+
+    {/* Company information */}
+    <div>
+      <Link href="/" className="inline-flex items-center">
+        <img
+          src="/logo/logo.jpg"
+          alt="Canadiana Exports"
+          className="h-16 w-auto rounded-lg bg-white p-1 object-contain"
+        />
+      </Link>
+
+      <p className="mt-6 max-w-sm text-base leading-[1.8] text-white/90">
+        Connecting Canadian quality with international opportunities through
+        sourcing, trade coordination and export solutions.
+      </p>
+    </div>
+
+    {/* Quick links */}
+    <div>
+      <h3 className="text-lg font-extrabold text-[#C1D38D] sm:text-xl">
+        Quick Links
+      </h3>
+
+      <div className="mt-6 flex flex-col gap-4">
+        {quickLinks.map((item) => (
+          <Link
+            key={item.label}
+            href={item.href}
+            className="w-fit text-base text-white/85 transition hover:translate-x-1 hover:text-[#C1D38D]"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
+    </div>
+
+    {/* Contact details */}
+    <div>
+      <h3 className="text-lg font-extrabold text-[#C1D38D] sm:text-xl">
+        Contact
+      </h3>
+
+      <div className="mt-6 space-y-5 text-base text-white/85">
+        <a
+          href="mailto:info@canadianaexports.ca"
+          className="block break-words transition hover:text-[#C1D38D]"
+        >
+          info@canadianaexports.ca
+        </a>
+
+        <a
+          href="tel:+18676690242"
+          className="block transition hover:text-[#C1D38D]"
+        >
+          +1 867-669-0242
+        </a>
+
+        <p>Yellowknife, NT, Canada</p>
+      </div>
+    </div>
+  </div>
+
+  {/* Copyright */}
+  <div className="border-t border-white/15">
+    <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-5 py-6 text-sm font-medium text-white/75 sm:flex-row sm:text-base lg:px-8">
+      <p>
+        © {new Date().getFullYear()} Canadiana Exports. All rights reserved.
+      </p>
+
+      <p>
+        Connecting Canadian Quality to Global Markets.
+      </p>
+    </div>
+  </div>
+</footer>
     </main>
   );
 }

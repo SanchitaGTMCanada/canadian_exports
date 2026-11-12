@@ -43,18 +43,6 @@ const team = [
       "Marketing graduate with over 20 years of experience in sales and business development across the furniture, art, and home décor industries. Throughout her career, she has built strong skills in team leadership, strategic planning, and revenue growth.",
     initials: "JS",
   },
-  {
-    name: "Sudeep Santarra",
-    qualification: "MBA in Foreign Trade",
-    role: "Head of India Region",
-    region: "India",
-    // The original team page image URL currently returns 404; use an initials treatment instead of an unrelated portrait.
-    image: null,
-    imagePosition: "center",
-    description:
-      "Over 17 years of experience in the Export & Import industry. A results-driven professional dedicated to optimizing supply chain processes, Export and Import management, team leading, and fostering international relationships. His expertise lies in navigating complex customs regulations, negotiating favourable terms with suppliers and buyers, and leveraging market trends to drive strategic decision making.",
-    initials: "SS",
-  },
 ];
 
 const footerLinks = [
@@ -75,7 +63,7 @@ const trustItems = [
 function Eyebrow({ children, light = false }) {
   return (
     <span
-      className={`inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.23em] ${
+      className={`inline-flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.16em] sm:text-sm ${
         light ? "text-[#C1D38D]" : "text-[#8FA94C]"
       }`}
     >
@@ -130,17 +118,17 @@ export default function OurTeamPage() {
             className="relative z-10 max-w-2xl"
           >
             <Eyebrow light>Meet the people behind our work</Eyebrow>
-            <h1 className="mt-5 text-[2.8rem] font-extrabold leading-[1.06] tracking-[-0.055em] text-white sm:text-6xl lg:text-[4.4rem]">
+            <h1 className="mt-5 text-[2.75rem] font-extrabold leading-[1.08] tracking-[-0.05em] text-white sm:text-[3.5rem] lg:text-[4rem]">
               Our <span className="text-[#C1D38D]">Team.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-sm leading-7 text-white/85 sm:text-base sm:leading-8">
+            <p className="mt-6 max-w-xl text-base leading-[1.8] text-white/90 sm:text-lg">
               Meet the regional leaders bringing logistics, marketing and
               international trade experience together to support Canadiana
               Exports&apos; global connections.
             </p>
             <Link
               href="/#contact"
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#B5CC68] px-6 py-3.5 text-xs font-extrabold text-[#263206] shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:bg-[#C5D98A]"
+              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#B5CC68] px-6 py-3.5 text-sm font-extrabold sm:text-base text-[#263206] shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:bg-[#C5D98A]"
             >
               Connect With Our Team <ArrowRight size={15} />
             </Link>
@@ -165,8 +153,8 @@ export default function OurTeamPage() {
                   <Globe2 size={19} />
                 </span>
                 <span>
-                  <span className="block text-xs font-extrabold">Connected globally</span>
-                  <span className="mt-0.5 block text-[10px] text-white/70">Regional leadership</span>
+                  <span className="block text-sm font-extrabold">Connected globally</span>
+                  <span className="mt-0.5 block text-xs text-white/80">Regional leadership</span>
                 </span>
               </div>
             </div>
@@ -180,9 +168,9 @@ export default function OurTeamPage() {
           {trustItems.map(({ label, icon: Icon }) => (
             <div
               key={label}
-              className="flex items-center justify-center gap-2.5 text-[11px] font-extrabold text-[#343A31] sm:text-xs"
+              className="flex items-center justify-center gap-2.5 text-sm font-bold text-[#343A31] sm:text-base"
             >
-              <Icon size={16} className="text-[#8FA94C]" strokeWidth={1.8} />
+              <Icon size={19} className="text-[#8FA94C]" strokeWidth={1.8} />
               {label}
             </div>
           ))}
@@ -195,11 +183,11 @@ export default function OurTeamPage() {
           <div className="grid items-end gap-6 lg:grid-cols-[1fr_0.75fr]">
             <div>
               <Eyebrow>People. Experience. Collaboration.</Eyebrow>
-              <h2 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.13] tracking-[-0.045em] text-[#252925] sm:text-4xl lg:text-[2.8rem]">
+              <h2 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.15] tracking-[-0.04em] text-[#252925] sm:text-[2.5rem] lg:text-[2.75rem]">
                 Local knowledge. <span className="text-[#718A50]">International perspective.</span>
               </h2>
             </div>
-            <p className="max-w-xl text-[13px] leading-7 text-[#737B72] sm:text-sm lg:justify-self-end">
+            <p className="max-w-xl text-base leading-[1.8] text-[#555D53] lg:justify-self-end">
               Our team brings together regional knowledge and professional
               experience across logistics, marketing, export and import
               operations to help coordinate international trade.
@@ -210,8 +198,8 @@ export default function OurTeamPage() {
 
       {/* TEAM CARDS */}
       <section className="bg-[#F1F2EF] pb-16 pt-3 sm:pb-20 lg:pb-24">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mx-auto max-w-5xl px-5 lg:px-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {team.map((person, index) => (
               <motion.article
                 key={person.name}
@@ -234,13 +222,13 @@ export default function OurTeamPage() {
                       <div className="flex h-28 w-28 items-center justify-center rounded-full border border-white/30 bg-white/10 text-4xl font-extrabold tracking-tight text-[#D5E4A5] shadow-xl backdrop-blur-sm">
                         {person.initials}
                       </div>
-                      <span className="mt-4 text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/65">
+                      <span className="mt-4 text-xs font-extrabold uppercase tracking-[0.16em] text-white/85">
                         Canadiana Exports
                       </span>
                     </div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#172219]/65 via-transparent to-transparent" />
-                  <span className="absolute left-5 top-5 rounded-full border border-white/25 bg-[#1E2805]/65 px-3 py-2 text-[9px] font-extrabold uppercase tracking-[0.16em] text-white backdrop-blur-md">
+                  <span className="absolute left-5 top-5 rounded-full border border-white/25 bg-[#1E2805]/65 px-3 py-2 text-xs font-extrabold uppercase tracking-[0.14em] text-white backdrop-blur-md">
                     {person.region}
                   </span>
                   <span className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/90 text-[#536A3B] shadow-lg">
@@ -249,21 +237,21 @@ export default function OurTeamPage() {
                 </div>
 
                 <div className="p-6 sm:p-7">
-                  <p className="text-[10px] font-extrabold uppercase tracking-[0.17em] text-[#8FA94C]">
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#718A50]">
                     {person.qualification}
                   </p>
-                  <h3 className="mt-3 text-xl font-extrabold leading-snug tracking-[-0.035em] text-[#292E28] sm:text-2xl">
+                  <h3 className="mt-3 text-xl font-extrabold leading-snug tracking-[-0.03em] text-[#252925] sm:text-2xl">
                     {person.name}
                   </h3>
-                  <p className="mt-2 text-xs font-extrabold leading-5 text-[#536A3B]">
+                  <p className="mt-2 text-sm font-extrabold leading-5 text-[#536A3B]">
                     {person.role}
                   </p>
                   <div className="my-5 h-px bg-[#E8EBE4]" />
-                  <p className="text-[12px] leading-[1.9] text-[#747B72] sm:text-[13px]">
+                  <p className="text-base leading-[1.8] text-[#555D53]">
                     {person.description}
                   </p>
                   <div className="mt-6 flex items-center justify-between border-t border-[#E8EBE4] pt-4">
-                    <span className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#A0A69A]">
+                    <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#687064]">
                       Canadiana Exports
                     </span>
                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EEF2E7] text-[#718A50] transition group-hover:bg-[#A8BD63] group-hover:text-[#263206]">
@@ -284,16 +272,16 @@ export default function OurTeamPage() {
           <div className="relative flex flex-col items-start justify-between gap-7 md:flex-row md:items-center">
             <div className="max-w-2xl">
               <Eyebrow light>Let&apos;s Work Together</Eyebrow>
-              <h2 className="mt-4 text-3xl font-extrabold leading-[1.13] tracking-[-0.045em] text-white sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-[-0.04em] text-white sm:text-[2.5rem] lg:text-[2.75rem]">
                 Work with a team that understands global trade.
               </h2>
-              <p className="mt-4 text-[13px] leading-7 text-white/80 sm:text-sm">
+              <p className="mt-4 text-base leading-[1.8] text-white/90 sm:text-lg">
                 Tell us about your sourcing, logistics or export requirements.
               </p>
             </div>
             <Link
               href="/#contact"
-              className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3.5 text-xs font-extrabold text-[#263206] transition hover:-translate-y-0.5 hover:bg-[#EFF3E7]"
+              className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-extrabold sm:text-base text-[#263206] transition hover:-translate-y-0.5 hover:bg-[#EFF3E7]"
             >
               Contact Our Team <ArrowRight size={15} />
             </Link>
@@ -312,19 +300,19 @@ export default function OurTeamPage() {
                 className="h-14 w-auto rounded-lg bg-white p-1 object-contain"
               />
             </Link>
-            <p className="mt-5 max-w-sm text-[12px] leading-6 text-white/65">
+            <p className="mt-5 max-w-sm text-base leading-[1.8] text-white/85">
               Connecting Canadian quality with international opportunities
               through sourcing, trade coordination and export solutions.
             </p>
           </div>
           <div>
-            <h3 className="text-xs font-extrabold text-[#C1D38D]">Quick Links</h3>
+            <h3 className="text-sm font-extrabold text-[#C1D38D]">Quick Links</h3>
             <div className="mt-4 flex flex-col gap-2.5">
               {footerLinks.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-[12px] text-white/70 transition hover:text-[#C1D38D]"
+                  className="text-base text-white/85 transition hover:text-[#C1D38D]"
                 >
                   {item.label}
                 </Link>
@@ -332,8 +320,8 @@ export default function OurTeamPage() {
             </div>
           </div>
           <div>
-            <h3 className="text-xs font-extrabold text-[#C1D38D]">Contact</h3>
-            <div className="mt-4 space-y-3 text-[12px] text-white/70">
+            <h3 className="text-sm font-extrabold text-[#C1D38D]">Contact</h3>
+            <div className="mt-4 space-y-3 text-base text-white/85">
               <a href="mailto:info@canadianaexports.ca" className="block transition hover:text-[#C1D38D]">
                 info@canadianaexports.ca
               </a>
@@ -345,7 +333,7 @@ export default function OurTeamPage() {
           </div>
         </div>
         <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-col justify-between gap-2 px-5 py-5 text-[10px] text-white/40 sm:flex-row lg:px-8">
+          <div className="mx-auto flex max-w-7xl flex-col justify-between gap-2 px-5 py-5 text-sm text-white/70 sm:flex-row lg:px-8">
             <p>© {new Date().getFullYear()} Canadiana Exports. All rights reserved.</p>
             <p>Connecting Canadian Quality to Global Markets.</p>
           </div>

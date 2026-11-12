@@ -203,7 +203,7 @@ const iconMap = {
 function Eyebrow({ children, light = false }) {
   return (
     <span
-      className={`inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.22em] ${
+      className={`inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.18em] sm:text-sm ${
         light ? "text-[#C1D38D]" : "text-[#8FA94C]"
       }`}
     >
@@ -285,16 +285,16 @@ export default function OurServicesPage() {
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-gradient-to-r from-[#354A25] via-[#536A3B] to-[#718A50]">
         <BackgroundIcons light />
-        <div className="relative mx-auto grid min-h-[460px] max-w-[1400px] items-center gap-10 px-5 pb-16 pt-32 sm:min-h-[520px] sm:pb-20 lg:min-h-[540px] lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-8">
+        <div className="relative mx-auto grid min-h-[440px] max-w-7xl items-center gap-10 px-5 pb-16 pt-32 sm:min-h-[490px] sm:pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="relative z-10 max-w-2xl">
             <Eyebrow light>What we do</Eyebrow>
-            <h1 className="mt-5 text-5xl font-extrabold leading-[1.04] tracking-[-0.055em] text-white sm:text-7xl lg:text-[5rem]">
+            <h1 className="mt-5 text-[44px] font-extrabold leading-[1.08] tracking-[-0.045em] text-white sm:text-[56px] lg:text-[64px]">
               Our <span className="text-[#C1D38D]">Services.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-8 text-white/90 sm:text-lg sm:leading-9">
+            <p className="mt-6 max-w-xl text-base leading-[1.8] text-white/90 sm:text-lg sm:leading-[1.8]">
               From sourcing and procurement to logistics, compliance and market strategy, we help coordinate the key parts of your export journey.
             </p>
-            <Link href="/contact-us" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#B5CC68] px-8 py-4 text-base font-extrabold text-[#263206] shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:bg-[#C5D98A]">
+            <Link href="/contact-us" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#B5CC68] px-6 py-3.5 text-sm font-extrabold sm:text-base text-[#263206] shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:bg-[#C5D98A]">
               Discuss Your Requirements <ArrowRight size={15} />
             </Link>
           </motion.div>
@@ -302,7 +302,7 @@ export default function OurServicesPage() {
           <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.65, delay: 0.08 }} className="relative z-10">
             <div className="absolute -right-3 -top-3 h-28 w-28 rounded-tr-[2rem] border-r border-t border-white/30 sm:-right-4 sm:-top-4 sm:h-36 sm:w-36" />
             <div className="relative overflow-hidden rounded-[1.4rem] border border-white/20 shadow-2xl shadow-[#1E2805]/25 sm:rounded-[1.8rem]">
-              <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1400&q=90" alt="International cargo and logistics" className="h-[250px] w-full object-cover sm:h-[310px] lg:h-[330px]" />
+              <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1400&q=90" alt="International cargo and logistics" className="h-[260px] w-full object-cover sm:h-[330px] lg:h-[350px]" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#172219]/45 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-xl border border-white/20 bg-[#1E2805]/70 px-4 py-3 text-white backdrop-blur-md">
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#B5CC68] text-[#263206]"><Globe2 size={18} /></span>
@@ -335,11 +335,11 @@ export default function OurServicesPage() {
         <div className="mx-auto grid max-w-[1240px] gap-7 px-5 sm:px-7 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-16 lg:px-10">
           <div>
             <Eyebrow>How we support your business</Eyebrow>
-            <h2 className="mt-4 max-w-2xl text-4xl font-extrabold leading-[1.08] tracking-[-0.05em] text-[#252925] sm:text-5xl lg:text-[3.5rem]">
+            <h2 className="mt-4 max-w-2xl text-[32px] font-extrabold leading-[1.15] tracking-[-0.04em] text-[#252925] sm:text-[40px] lg:text-[44px]">
               Complete export support, <span className="text-[#718A50]">built around you.</span>
             </h2>
           </div>
-          <p className="max-w-xl text-base leading-8 text-[#737B72] sm:text-lg lg:pb-1">
+          <p className="max-w-xl text-base leading-[1.8] text-[#737B72] sm:text-lg lg:pb-1">
             From the first supplier conversation to final delivery, our services support every important stage of your export journey with coordinated expertise and dependable communication.
           </p>
         </div>
@@ -370,7 +370,7 @@ export default function OurServicesPage() {
                   transition={{ duration: 0.6 }}
                   className="relative z-10"
                 >
-                  <div className={`mb-5 flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[0.22em] ${
+                  <div className={`mb-5 flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.18em] sm:text-sm ${
                     isDark ? "text-[#C1D38D]" : "text-[#829B48]"
                   }`}>
                     <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#A8BD63]/20 text-sm">
@@ -380,27 +380,27 @@ export default function OurServicesPage() {
                     <span>Canadiana Export Services</span>
                   </div>
 
-                  <h2 className={`max-w-2xl text-4xl font-extrabold leading-[1.08] tracking-[-0.05em] sm:text-5xl lg:text-[3.25rem] ${
+                  <h2 className={`max-w-2xl text-[32px] font-extrabold leading-[1.15] tracking-[-0.04em] sm:text-[40px] lg:text-[44px] ${
                     isDark ? "text-white" : "text-[#252925]"
                   }`}>
                     {service.title}
                   </h2>
 
-                  <p className={`mt-5 max-w-xl text-lg font-semibold leading-8 sm:text-xl ${
+                  <p className={`mt-5 max-w-xl text-base font-semibold leading-[1.7] sm:text-lg ${
                     isDark ? "text-[#C1D38D]" : "text-[#536A3B]"
                   }`}>
                     {service.subtitle}
                   </p>
 
                   <div className="mt-7">
-                    <p className={`mb-4 text-xs font-extrabold uppercase tracking-[0.18em] ${
+                    <p className={`mb-4 text-xs font-extrabold uppercase tracking-[0.16em] sm:text-sm ${
                       isDark ? "text-white/55" : "text-[#8A9284]"
                     }`}>
                       What we provide
                     </p>
                     <ul className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
                       {service.bullets.map((bullet) => (
-                        <li key={bullet} className={`flex items-start gap-3 text-base font-semibold leading-7 sm:text-[17px] ${
+                        <li key={bullet} className={`flex items-start gap-3 text-base font-semibold leading-[1.7] ${
                           isDark ? "text-white/85" : "text-[#4D554A]"
                         }`}>
                           <CheckCircle2 size={19} className="mt-1 shrink-0 text-[#A8BD63]" />
@@ -410,7 +410,7 @@ export default function OurServicesPage() {
                     </ul>
                   </div>
 
-                  <div className={`mt-8 space-y-5 text-base leading-[1.9] sm:text-[17px] ${
+                  <div className={`mt-8 space-y-5 text-base leading-[1.8] ${
                     isDark ? "text-white/75" : "text-[#697166]"
                   }`}>
                     {service.paragraphs.map((paragraph, paragraphIndex) => (
@@ -468,14 +468,14 @@ export default function OurServicesPage() {
           <div className="relative flex flex-col items-start justify-between gap-7 md:flex-row md:items-center">
             <div className="max-w-2xl">
               <Eyebrow light>Let's work together</Eyebrow>
-              <h2 className="mt-4 text-4xl font-extrabold leading-[1.1] tracking-[-0.05em] text-white sm:text-5xl">
+              <h2 className="mt-4 text-[32px] font-extrabold leading-[1.15] tracking-[-0.04em] text-white sm:text-[40px] lg:text-[44px]">
                 Looking for a reliable export partner?
               </h2>
-              <p className="mt-4 text-lg leading-[1.9] text-white/90 sm:text-xl">
+              <p className="mt-4 text-base leading-[1.8] text-white/90 sm:text-lg">
                 Tell us about your sourcing, shipping or export requirements and let's start a conversation.
               </p>
             </div>
-            <Link href="/contact-us" className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-extrabold text-[#263206] transition hover:-translate-y-0.5 hover:bg-[#EFF3E7]">
+            <Link href="/contact-us" className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-extrabold sm:text-base text-[#263206] transition hover:-translate-y-0.5 hover:bg-[#EFF3E7]">
               Contact Us <ArrowRight size={15} />
             </Link>
           </div>
@@ -489,21 +489,21 @@ export default function OurServicesPage() {
             <Link href="/" className="inline-flex items-center">
               <img src="/logo/logo.jpg" alt="Canadiana Exports" className="h-14 w-auto rounded-lg bg-white p-1 object-contain" />
             </Link>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/75">
+            <p className="mt-5 max-w-sm text-base leading-[1.7] text-white/75">
               Connecting Canadian quality with international opportunities through sourcing, trade coordination and export solutions.
             </p>
           </div>
           <div>
-            <h3 className="text-sm font-extrabold text-[#C1D38D]">Quick Links</h3>
+            <h3 className="text-base font-extrabold text-[#C1D38D]">Quick Links</h3>
             <div className="mt-4 flex flex-col gap-2.5">
               {quickLinks.map((item) => (
-                <Link key={item.label} href={item.href} className="text-sm text-white/75 transition hover:text-[#C1D38D]">{item.label}</Link>
+                <Link key={item.label} href={item.href} className="text-base text-white/75 transition hover:text-[#C1D38D]">{item.label}</Link>
               ))}
             </div>
           </div>
           <div>
-            <h3 className="text-sm font-extrabold text-[#C1D38D]">Contact</h3>
-            <div className="mt-4 space-y-3 text-sm text-white/75">
+            <h3 className="text-base font-extrabold text-[#C1D38D]">Contact</h3>
+            <div className="mt-4 space-y-3 text-base text-white/75">
               <a href="mailto:info@canadianaexports.ca" className="block transition hover:text-[#C1D38D]">info@canadianaexports.ca</a>
               <a href="tel:+18676690242" className="block transition hover:text-[#C1D38D]">+1 867-669-0242</a>
               <p>Yellowknife, NT, Canada</p>
