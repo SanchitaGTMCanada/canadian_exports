@@ -171,7 +171,7 @@ export default function ContactUsPage() {
                 poster="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=90"
                 aria-label="Canadiana Exports business and global trade video"
               >
-                <source src="/videoes/contact-hero.mp4" type="video/mp4" />
+                <source src="/videos/contact-hero.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-[#172219]/50 via-transparent to-transparent" />

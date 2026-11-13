@@ -145,17 +145,17 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-8 lg:flex">
-          {navigation.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="text-sm font-medium text-white/75 transition hover:text-[#C1D38D]"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+      <nav className="hidden items-center gap-9 lg:flex">
+  {navigation.map((item) => (
+    <Link
+      key={item.label}
+      href={item.href}
+      className="text-lg font-semibold text-white/90 transition hover:text-[#C1D38D]"
+    >
+      {item.label}
+    </Link>
+  ))}
+</nav>
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-3 lg:flex">
