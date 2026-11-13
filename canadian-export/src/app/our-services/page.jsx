@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from "../../components/Header";
+import ContactFooter from "@/components/ContactFooter";
 
 const services = [
   {
@@ -40,9 +41,8 @@ const services = [
       "Our rigorous quality control procedures ensure that each product meets the exacting standards required by our clients in Asia, Africa, and Europe, so you can trust that your goods will be ready for global distribution—on time and with confidence."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1499529112087-3cb3b73b0e2b?auto=format&fit=crop&w=1000&q=85"
+      "/images/services/procure.jpg",
+      
     ],
     "imageAlt": "Agricultural sourcing and Canadian grain production",
     "icon": "Wheat",
@@ -66,7 +66,7 @@ const services = [
       "Whether handling bulk shipments of grains via specialized carriers or transporting oil in tankers, or providing warehousing and inventory management services prior to export, we manage every step to optimize the logistics process, ensuring your products reach their destination on time and in perfect condition."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1600&q=85"
+      "/images/services/logistics.jpg",
     ],
     "imageAlt": "Cargo containers at a global shipping terminal",
     "icon": "Ship",
@@ -87,8 +87,8 @@ const services = [
       "Our experienced team is committed to ensuring complete compliance with local and international trade regulations, including tariffs, quotas, and import/export restrictions, allowing your shipments to pass through customs without unnecessary delays."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=85"
+      "/images/services/customs.jpg",
+   
     ],
     "imageAlt": "Trade paperwork and export documentation",
     "icon": "FileCheck",
@@ -109,7 +109,7 @@ const services = [
       "We also offer comprehensive trade risk assessments, considering factors like currency shifts, geopolitical changes, and natural disasters, so you can proactively manage risks and position your business for long-term success in international trade."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85"
+      "images/services/side.jpg"
     ],
     "imageAlt": "Market research and export strategy analysis",
     "icon": "ChartNoAxesCombined",
@@ -132,9 +132,7 @@ const services = [
       "Additionally, by utilizing the latest technology, including GPS tracking and IoT, we offer real-time visibility into the status and location of your shipments, so you can stay fully informed and confident throughout the journey."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1000&q=85"
+      "images/services/supplychain.jpg"
     ],
     "imageAlt": "Agricultural products, transport and distribution",
     "icon": "Boxes",
@@ -153,7 +151,7 @@ const services = [
       "We provide 24/7 support, enabling you to track your orders, address any concerns, and receive prompt solutions to any issues that may arise. In addition, we prioritize client education, offering clear and expert guidance on the intricacies of international trade, from documentation and customs regulations to other critical aspects of the export process."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=85"
+      "images/services/customer.jpg"
     ],
     "imageAlt": "Customer support and business consultation",
     "icon": "Headset",
@@ -173,8 +171,7 @@ const services = [
       "Additionally, our logistics optimization expertise uncovers opportunities to reduce costs, streamline transportation routes, and enhance overall supply chain efficiency, driving both operational performance and profitability."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=85"
+      "images/services/consulting.jpg"
     ],
     "imageAlt": "Advisory services and agricultural operations",
     "icon": "Compass",
@@ -218,7 +215,7 @@ function BackgroundIcons({ light = false }) {
     <div
       aria-hidden="true"
       className={`pointer-events-none absolute inset-0 overflow-hidden ${
-        light ? "text-white/[0.075]" : "text-[#536A3B]/[0.06]"
+        light ? "text-white/[0.075]" : "text-[#354A25]/[0.20]"
       }`}
     >
       <Globe2 className="absolute -left-8 top-2 h-32 w-32 stroke-[0.7]" />
@@ -283,26 +280,26 @@ export default function OurServicesPage() {
       <Header />
 
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-gradient-to-r from-[#354A25] via-[#536A3B] to-[#718A50]">
-        <BackgroundIcons light />
+      <section className="relative isolate overflow-hidden bg-gradient-to-r from-[#E7EEDC] via-[#DFE8D2] to-[#D6E2C9]">
+        <BackgroundIcons />
         <div className="relative mx-auto grid min-h-[440px] max-w-7xl items-center gap-10 px-5 pb-16 pt-32 sm:min-h-[490px] sm:pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="relative z-10 max-w-2xl">
-            <Eyebrow light>What we do</Eyebrow>
-            <h1 className="mt-5 text-[44px] font-extrabold leading-[1.08] tracking-[-0.045em] text-white sm:text-[56px] lg:text-[64px]">
-              Our <span className="text-[#C1D38D]">Services.</span>
+            <Eyebrow>What we do</Eyebrow>
+            <h1 className="mt-5 text-[44px] font-extrabold leading-[1.08] tracking-[-0.045em] text-[#263206] sm:text-[56px] lg:text-[64px]">
+              Our Services.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-[1.8] text-white/90 sm:text-lg sm:leading-[1.8]">
+            <p className="mt-6 max-w-xl text-base leading-[1.8] text-[#354A25]/90 sm:text-lg sm:leading-[1.8]">
               From sourcing and procurement to logistics, compliance and market strategy, we help coordinate the key parts of your export journey.
             </p>
-            <Link href="/contact-us" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#B5CC68] px-6 py-3.5 text-sm font-extrabold sm:text-base text-[#263206] shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:bg-[#C5D98A]">
+            <Link href="/contact-us" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#A8BD63] px-6 py-3.5 text-sm font-extrabold sm:text-base text-[#263206] shadow-lg shadow-[#536A3B]/15 transition hover:-translate-y-1 hover:bg-[#B8CC7A]">
               Discuss Your Requirements <ArrowRight size={15} />
             </Link>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.65, delay: 0.08 }} className="relative z-10">
-            <div className="absolute -right-3 -top-3 h-28 w-28 rounded-tr-[2rem] border-r border-t border-white/30 sm:-right-4 sm:-top-4 sm:h-36 sm:w-36" />
+            <div className="absolute -right-3 -top-3 h-28 w-28 rounded-tr-[2rem] border-r border-t border-[#536A3B]/25 sm:-right-4 sm:-top-4 sm:h-36 sm:w-36" />
             <div className="relative overflow-hidden rounded-[1.4rem] border border-white/20 shadow-2xl shadow-[#1E2805]/25 sm:rounded-[1.8rem]">
-              <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1400&q=90" alt="International cargo and logistics" className="h-[260px] w-full object-cover sm:h-[330px] lg:h-[350px]" />
+              <img src="/images/services/services.jpg" alt="International cargo and logistics" className="h-[260px] w-full object-cover sm:h-[330px] lg:h-[350px]" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#172219]/45 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-xl border border-white/20 bg-[#1E2805]/70 px-4 py-3 text-white backdrop-blur-md">
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#B5CC68] text-[#263206]"><Globe2 size={18} /></span>
@@ -330,20 +327,7 @@ export default function OurServicesPage() {
         </div>
       </section>
 
-      {/* SERVICES INTRO */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto grid max-w-[1240px] gap-7 px-5 sm:px-7 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-16 lg:px-10">
-          <div>
-            <Eyebrow>How we support your business</Eyebrow>
-            <h2 className="mt-4 max-w-2xl text-[32px] font-extrabold leading-[1.15] tracking-[-0.04em] text-[#252925] sm:text-[40px] lg:text-[44px]">
-              Complete export support, <span className="text-[#718A50]">built around you.</span>
-            </h2>
-          </div>
-          <p className="max-w-xl text-base leading-[1.8] text-[#737B72] sm:text-lg lg:pb-1">
-            From the first supplier conversation to final delivery, our services support every important stage of your export journey with coordinated expertise and dependable communication.
-          </p>
-        </div>
-      </section>
+  
 
       {/* EACH SERVICE HAS ITS OWN FULL-WIDTH SECTION */}
       <div>
@@ -355,7 +339,7 @@ export default function OurServicesPage() {
             <section
               key={service.number}
               id={`service-${service.number}`}
-              className={`relative isolate overflow-hidden py-20 sm:py-24 lg:py-28 ${
+              className={`relative isolate overflow-hidden py-10 sm:py-14 lg:py-18 ${
                 isDark ? "bg-[#242424] text-white" : "bg-[#F7F8F5] text-[#252925]"
               }`}
             >
@@ -461,62 +445,9 @@ export default function OurServicesPage() {
         })}
       </div>
 
-      {/* CTA */}
-      <section className="bg-white px-5 py-14 sm:py-16 lg:py-20">
-        <div className="relative mx-auto max-w-[1400px] overflow-hidden rounded-[1.4rem] bg-gradient-to-r from-[#354A25] via-[#536A3B] to-[#718A50] px-6 py-10 shadow-xl shadow-[#1E2805]/15 sm:rounded-[1.6rem] sm:px-10 sm:py-12 lg:px-12">
-          <BackgroundIcons light />
-          <div className="relative flex flex-col items-start justify-between gap-7 md:flex-row md:items-center">
-            <div className="max-w-2xl">
-              <Eyebrow light>Let's work together</Eyebrow>
-              <h2 className="mt-4 text-[32px] font-extrabold leading-[1.15] tracking-[-0.04em] text-white sm:text-[40px] lg:text-[44px]">
-                Looking for a reliable export partner?
-              </h2>
-              <p className="mt-4 text-base leading-[1.8] text-white/90 sm:text-lg">
-                Tell us about your sourcing, shipping or export requirements and let's start a conversation.
-              </p>
-            </div>
-            <Link href="/contact-us" className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-extrabold sm:text-base text-[#263206] transition hover:-translate-y-0.5 hover:bg-[#EFF3E7]">
-              Contact Us <ArrowRight size={15} />
-            </Link>
-          </div>
-        </div>
-      </section>
+     
 
-      {/* FOOTER */}
-      <footer className="bg-[#1E2805] text-white">
-        <div className="mx-auto grid max-w-[1400px] gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.7fr_0.9fr] lg:px-8">
-          <div>
-            <Link href="/" className="inline-flex items-center">
-              <img src="/logo/logo.jpg" alt="Canadiana Exports" className="h-14 w-auto rounded-lg bg-white p-1 object-contain" />
-            </Link>
-            <p className="mt-5 max-w-sm text-base leading-[1.7] text-white/75">
-              Connecting Canadian quality with international opportunities through sourcing, trade coordination and export solutions.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-base font-extrabold text-[#C1D38D]">Quick Links</h3>
-            <div className="mt-4 flex flex-col gap-2.5">
-              {quickLinks.map((item) => (
-                <Link key={item.label} href={item.href} className="text-base text-white/75 transition hover:text-[#C1D38D]">{item.label}</Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className="text-base font-extrabold text-[#C1D38D]">Contact</h3>
-            <div className="mt-4 space-y-3 text-base text-white/75">
-              <a href="mailto:info@canadianaexports.ca" className="block transition hover:text-[#C1D38D]">info@canadianaexports.ca</a>
-              <a href="tel:+18676690242" className="block transition hover:text-[#C1D38D]">+1 867-669-0242</a>
-              <p>Yellowknife, NT, Canada</p>
-            </div>
-          </div>
-        </div>
-        <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-[1400px] flex-col justify-between gap-2 px-5 py-5 text-xs text-white/60 sm:flex-row lg:px-10">
-            <p>© {new Date().getFullYear()} Canadiana Exports. All rights reserved.</p>
-            <p>Connecting Canadian Quality to Global Markets.</p>
-          </div>
-        </div>
-      </footer>
+     <ContactFooter/>
     </main>
   );
 }
