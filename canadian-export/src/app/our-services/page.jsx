@@ -27,158 +27,160 @@ import ContactFooter from "@/components/ContactFooter";
 
 const services = [
   {
-    "number": "01",
-    "title": "Procurement and Sourcing",
-    "subtitle": "Building dependable supply from trusted Canadian producers.",
-    "bullets": [
+    number: "01",
+    title: "Procurement and Sourcing",
+    subtitle: "Reliable sourcing from trusted Canadian suppliers.",
+    bullets: [
       "Supplier Management",
       "Sourcing of Raw Materials",
       "Quality Control"
     ],
-    "paragraphs": [
-      "At the heart of our Procurement and Sourcing services is a commitment to building strong, trusted relationships with local Canadian suppliers.",
-      "We work closely with farmers, producers, and refineries to ensure a reliable and consistent supply of high-quality grains, oil, and fertilizers for export to international markets. From identifying the right suppliers to negotiating fair contracts and overseeing the procurement process, we handle every detail with care.",
-      "Our rigorous quality control procedures ensure that each product meets the exacting standards required by our clients in Asia, Africa, and Europe, so you can trust that your goods will be ready for global distribution—on time and with confidence."
+    paragraphs: [
+      "At Canadiana Exports, we are committed to connecting international buyers with trusted Canadian suppliers and producers.",
+      "We work closely with farmers, manufacturers, and suppliers to source high-quality grains, agricultural products, and other commodities. From supplier identification and evaluation to price negotiation and procurement coordination, we manage every stage with care.",
+      "Our quality control process ensures that products meet the required specifications and international standards, helping our clients receive dependable supplies ready for global markets."
     ],
-    "images": [
-      "/images/services/procure.jpg",
-      
+    images: [
+      "/images/services/procure.jpg"
     ],
-    "imageAlt": "Agricultural sourcing and Canadian grain production",
-    "icon": "Wheat",
-    "tone": "light"
+    imageAlt: "Canadian grain production, agricultural sourcing and fresh produce",
+    icon: "Wheat",
+    tone: "light"
   },
   {
-    "number": "02",
-    "title": "Logistics and Transportation",
-    "subtitle": "Coordinating secure, efficient movement from origin to destination.",
-    "bullets": [
+    number: "02",
+    title: "Logistics and Transportation",
+    subtitle: "Efficient coordination from origin to final destination.",
+    bullets: [
       "Freight Management",
       "Containerization & Packaging",
       "Multimodal Transport",
       "Bulk Shipping",
       "Warehousing and Distribution"
     ],
-    "paragraphs": [
-      "Our Logistics and Transportation services are specifically designed to ensure the secure, efficient, and timely delivery of goods from Canada to markets around the world.",
-      "We offer a full range of freight management solutions, carefully selecting the best transport options—road, rail, sea, or air—based on your destination and the urgency of your shipment. With a focus on precision, we expertly handle containerization and packaging to safeguard sensitive products such as grains and oil, minimizing any risks during transit.",
-      "Our multimodal transport strategy seamlessly integrates different modes of transport, delivering flexible, end-to-end solutions that are both cost-effective and reliable.",
-      "Whether handling bulk shipments of grains via specialized carriers or transporting oil in tankers, or providing warehousing and inventory management services prior to export, we manage every step to optimize the logistics process, ensuring your products reach their destination on time and in perfect condition."
+    paragraphs: [
+      "Our logistics and transportation services ensure the smooth and reliable movement of goods from Canada to international destinations.",
+      "We coordinate freight management and select suitable transportation methods, including road, rail, sea, and air, based on shipment requirements. Our containerization and packaging solutions help protect products during handling and transit.",
+      "Through integrated multimodal transportation, we provide flexible and cost-effective shipping arrangements while maintaining reliable delivery schedules.",
+      "From bulk cargo shipments to warehousing and distribution, we coordinate the movement of goods at every stage, helping reduce delays and maintain supply chain efficiency."
     ],
-    "images": [
-      "/images/services/logistics.jpg",
+    images: [
+      "/images/services/logistics.jpg"
     ],
-    "imageAlt": "Cargo containers at a global shipping terminal",
-    "icon": "Ship",
-    "tone": "dark"
+    imageAlt: "Cargo transportation and international shipping logistics",
+    icon: "Ship",
+    tone: "dark"
   },
   {
-    "number": "03",
-    "title": "Customs and Documentation",
-    "subtitle": "Helping shipments move through trade requirements with clarity.",
-    "bullets": [
+    number: "03",
+    title: "Customs and Documentation",
+    subtitle: "Simplifying export procedures and trade documentation.",
+    bullets: [
       "Customs Clearance",
       "Export Documentation",
       "Compliance with International Trade Regulations"
     ],
-    "paragraphs": [
-      "Our Customs and Documentation services are designed to streamline the complexities of international trade, ensuring that every shipment complies with the specific regulatory requirements of its destination.",
-      "We manage the full customs clearance process, handling all the necessary paperwork and legal formalities to ensure a smooth and efficient entry of goods. From preparing key export documents such as commercial invoices, packing lists, and bills of lading, to obtaining certificates of origin and phytosanitary certificates for agricultural products, we ensure no detail is overlooked.",
-      "Our experienced team is committed to ensuring complete compliance with local and international trade regulations, including tariffs, quotas, and import/export restrictions, allowing your shipments to pass through customs without unnecessary delays."
+    paragraphs: [
+      "Our customs and documentation services help simplify international trade procedures and ensure shipments meet the requirements of their destination markets.",
+      "We assist with essential export documentation, including commercial invoices, packing lists, bills of lading, certificates of origin, and other relevant shipping documents.",
+      "By coordinating customs clearance and reviewing documentation requirements, we help minimize administrative delays and support a smoother shipping process.",
+      "Our focus on trade compliance helps ensure that shipments follow applicable customs procedures and international regulations."
     ],
-    "images": [
-      "/images/services/customs.jpg",
-   
+    images: [
+      "/images/services/customs.jpg"
     ],
-    "imageAlt": "Trade paperwork and export documentation",
-    "icon": "FileCheck",
-    "tone": "light"
+    imageAlt: "Customs clearance and international export documentation",
+    icon: "FileCheck",
+    tone: "light"
   },
   {
-    "number": "04",
-    "title": "Market Intelligence and Export Strategy",
-    "subtitle": "Making informed decisions in a changing global marketplace.",
-    "bullets": [
+    number: "04",
+    title: "Market Intelligence and Export Strategy",
+    subtitle: "Market insights to support smarter export decisions.",
+    bullets: [
       "Market Research",
       "Price Forecasting",
       "Trade Risk Assessment"
     ],
-    "paragraphs": [
-      "Our Market Intelligence and Export Strategy services are designed to give you the insights and confidence needed to make informed decisions in today’s dynamic global marketplace.",
-      "Through thorough market research, we help you understand demand trends and emerging opportunities in regions like Asia, Africa, and Europe, ensuring you target the most promising markets for your products. Our price forecasting services provide you with a clear view of commodity price movements, particularly for volatile products such as grains and oil, helping you navigate fluctuations with confidence.",
-      "We also offer comprehensive trade risk assessments, considering factors like currency shifts, geopolitical changes, and natural disasters, so you can proactively manage risks and position your business for long-term success in international trade."
+    paragraphs: [
+      "Our market intelligence and export strategy services provide businesses with valuable insights into international markets and emerging trade opportunities.",
+      "Through market research, we assess industry trends, buyer demand, competitive conditions, and potential opportunities across global markets. This helps businesses identify suitable destinations and make informed decisions about their export activities.",
+      "We also provide commodity price insights and forecasting to help clients understand market movements and plan their purchasing and sales strategies.",
+      "By evaluating potential trade risks, market conditions, and changing requirements, we help businesses develop practical export strategies for sustainable international growth."
     ],
-    "images": [
+    images: [
       "images/services/side.jpg"
     ],
-    "imageAlt": "Market research and export strategy analysis",
-    "icon": "ChartNoAxesCombined",
-    "tone": "dark"
+    imageAlt: "Global market research and export strategy planning",
+    icon: "ChartNoAxesCombined",
+    tone: "dark"
   },
   {
-    "number": "05",
-    "title": "Supply Chain Optimization",
-    "subtitle": "Improving visibility, planning and flow across your supply chain.",
-    "bullets": [
+    number: "05",
+    title: "Supply Chain Optimization",
+    subtitle: "Creating a more efficient and connected supply chain.",
+    bullets: [
       "Inventory Management",
       "Demand Forecasting",
       "Order Fulfillment",
       "Supply Chain Visibility"
     ],
-    "paragraphs": [
-      "Our Supply Chain Optimization services are designed to improve efficiency and ensure smooth operations across every stage of your supply chain.",
-      "We provide sophisticated inventory management tools to help you monitor and balance stock levels, ensuring that supply aligns with demand in each region. With our advanced demand forecasting, we leverage data-driven insights to predict future needs for grains, oil, and fertilizers, helping you stay ahead of market trends.",
-      "Our order fulfillment solutions are focused on streamlining the process from order placement to final delivery, reducing delays, and enhancing customer satisfaction.",
-      "Additionally, by utilizing the latest technology, including GPS tracking and IoT, we offer real-time visibility into the status and location of your shipments, so you can stay fully informed and confident throughout the journey."
+    paragraphs: [
+      "Our Supply Chain Optimization services are designed to improve the movement, management, and coordination of goods throughout the supply chain.",
+      "We help businesses manage inventory levels, forecast demand, and coordinate orders to maintain a consistent flow of products while reducing unnecessary delays and operational costs.",
+      "Our order fulfillment solutions support efficient coordination between suppliers, logistics partners, and customers, helping ensure that shipments move according to planned schedules.",
+      "With improved shipment tracking and supply chain visibility, businesses can monitor their goods, manage potential disruptions, and make better-informed operational decisions."
     ],
-    "images": [
+    images: [
       "images/services/supplychain.jpg"
     ],
-    "imageAlt": "Agricultural products, transport and distribution",
-    "icon": "Boxes",
-    "tone": "light"
+    imageAlt: "Fresh produce, agricultural inventory and supply chain transportation",
+    icon: "Boxes",
+    tone: "light"
   },
   {
-    "number": "06",
-    "title": "Customer Service and Support",
-    "subtitle": "Responsive assistance throughout the export process.",
-    "bullets": [
+    number: "06",
+    title: "Customer Service and Support",
+    subtitle: "Dedicated assistance throughout your trading journey.",
+    bullets: [
       "24/7 Support",
-      "Client Dedication"
+      "Client Education"
     ],
-    "paragraphs": [
-      "Our Customer Service and Support team is committed to delivering outstanding assistance whenever you need it, ensuring a smooth and hassle-free experience.",
-      "We provide 24/7 support, enabling you to track your orders, address any concerns, and receive prompt solutions to any issues that may arise. In addition, we prioritize client education, offering clear and expert guidance on the intricacies of international trade, from documentation and customs regulations to other critical aspects of the export process."
+    paragraphs: [
+      "Our customer service team is committed to providing reliable assistance and maintaining clear communication throughout the export process.",
+      "We provide responsive support to help clients follow shipment progress, address concerns, and receive timely assistance whenever required.",
+      "We also guide clients through important aspects of international trade, including export procedures, documentation, shipping coordination, and other requirements.",
+      "By prioritizing communication and client satisfaction, we aim to build lasting business relationships based on trust and dependable service."
     ],
-    "images": [
+    images: [
       "images/services/customer.jpg"
     ],
-    "imageAlt": "Customer support and business consultation",
-    "icon": "Headset",
-    "tone": "dark"
+    imageAlt: "Customer assistance and international trade support",
+    icon: "Headset",
+    tone: "dark"
   },
   {
-    "number": "07",
-    "title": "Consulting and Advisory Services",
-    "subtitle": "Practical guidance for confident international trade decisions.",
-    "bullets": [
+    number: "07",
+    title: "Consulting and Advisory Services",
+    subtitle: "Expert guidance for better international trade planning.",
+    bullets: [
       "Trade Advisory",
       "Logistics Optimization"
     ],
-    "paragraphs": [
-      "Our Consulting and Advisory Services are designed to offer you the expert guidance needed to navigate the complexities of international trade with confidence.",
-      "We collaborate closely with you to develop tailored export strategies, focusing on critical areas such as market entry, risk management, and competitive positioning to help ensure long-term success.",
-      "Additionally, our logistics optimization expertise uncovers opportunities to reduce costs, streamline transportation routes, and enhance overall supply chain efficiency, driving both operational performance and profitability."
+    paragraphs: [
+      "Our consulting and advisory services help businesses navigate international trade with practical guidance and informed decision-making.",
+      "We work with clients to understand their business objectives, identify export opportunities, and develop strategies that support their international expansion.",
+      "Our trade advisory services cover areas such as market entry, supplier coordination, trade planning, and risk assessment, helping businesses approach new markets with greater confidence.",
+      "We also identify opportunities to optimize logistics operations, improve transportation planning, and streamline supply chain processes to support cost efficiency and long-term business growth."
     ],
-    "images": [
+    images: [
       "images/services/consulting.jpg"
     ],
-    "imageAlt": "Advisory services and agricultural operations",
-    "icon": "Compass",
-    "tone": "light"
+    imageAlt: "International trade consulting and agricultural advisory services",
+    icon: "Compass",
+    tone: "light"
   }
 ];
-
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
@@ -231,8 +233,12 @@ function ServiceVisual({ service }) {
 
   if (service.images.length === 1) {
     return (
-      <div className="relative h-full min-h-[380px] overflow-hidden rounded-[1.6rem] border border-[#E5EBDD] shadow-2xl shadow-[#1E2805]/15 sm:min-h-[440px]">
-        <img src={service.images[0]} alt={service.imageAlt} className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-[1.035]" />
+      <div className="relative h-full min-h-[320px] overflow-hidden rounded-[1.6rem] border border-[#E5EBDD] shadow-2xl shadow-[#1E2805]/15 sm:min-h-[380px] lg:min-h-[420px]">
+        <img
+          src={service.images[0]}
+          alt={service.imageAlt}
+          className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-[1.035]"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-[#172219]/55 via-transparent to-transparent" />
         <div className="absolute bottom-5 left-5 flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-[#1E2805]/75 text-[#C1D38D] backdrop-blur-md">
           <Icon size={23} />
@@ -243,10 +249,14 @@ function ServiceVisual({ service }) {
 
   if (service.images.length === 2) {
     return (
-      <div className="grid h-full min-h-[380px] sm:min-h-[460px] grid-cols-2 gap-2 overflow-hidden rounded-[1.6rem] border border-[#E5EBDD] shadow-2xl shadow-[#1E2805]/10">
+      <div className="grid h-full min-h-[320px] grid-cols-1 grid-rows-2 gap-2 overflow-hidden rounded-[1.6rem] border border-[#E5EBDD] shadow-2xl shadow-[#1E2805]/10 sm:min-h-[380px] lg:min-h-[420px]">
         {service.images.map((image, imageIndex) => (
-          <div key={image} className="overflow-hidden rounded-xl">
-            <img src={image} alt={`${service.imageAlt} ${imageIndex + 1}`} className="h-full min-h-[380px] sm:min-h-[460px] w-full object-cover transition duration-700 hover:scale-[1.04]" />
+          <div key={image} className="relative min-h-0 overflow-hidden rounded-xl">
+            <img
+              src={image}
+              alt={`${service.imageAlt} ${imageIndex + 1}`}
+              className="h-full w-full object-cover transition duration-700 hover:scale-[1.04]"
+            />
           </div>
         ))}
       </div>
@@ -254,15 +264,15 @@ function ServiceVisual({ service }) {
   }
 
   return (
-    <div className="grid h-full min-h-[380px] grid-cols-2 grid-rows-2 gap-2.5 overflow-hidden rounded-[1.6rem] border border-white/10 shadow-2xl shadow-black/20 sm:min-h-[460px]">
-      <div className="relative col-span-2 overflow-hidden rounded-xl">
+    <div className="grid h-full min-h-[320px] grid-cols-2 grid-rows-[1.15fr_0.85fr] gap-2.5 overflow-hidden rounded-[1.6rem] border border-white/10 shadow-2xl shadow-black/20 sm:min-h-[380px] lg:min-h-[420px]">
+      <div className="relative col-span-2 min-h-0 overflow-hidden rounded-xl">
         <img src={service.images[0]} alt={service.imageAlt} className="h-full w-full object-cover transition duration-700 hover:scale-[1.04]" />
       </div>
-      <div className="overflow-hidden rounded-xl">
-        <img src={service.images[1]} alt={service.imageAlt} className="h-full w-full object-cover transition duration-700 hover:scale-[1.04]" />
+      <div className="relative min-h-0 overflow-hidden rounded-xl">
+        <img src={service.images[1]} alt={`${service.imageAlt} 2`} className="h-full w-full object-cover transition duration-700 hover:scale-[1.04]" />
       </div>
-      <div className="overflow-hidden rounded-xl">
-        <img src={service.images[2]} alt={service.imageAlt} className="h-full w-full object-cover transition duration-700 hover:scale-[1.04]" />
+      <div className="relative min-h-0 overflow-hidden rounded-xl">
+        <img src={service.images[2]} alt={`${service.imageAlt} 3`} className="h-full w-full object-cover transition duration-700 hover:scale-[1.04]" />
       </div>
     </div>
   );
@@ -344,15 +354,15 @@ export default function OurServicesPage() {
               }`}
             >
               {isDark && <BackgroundIcons light />}
-              <div className={`relative mx-auto grid max-w-[1240px] items-center gap-12 px-5 sm:px-7 lg:grid-cols-2 lg:gap-16 lg:px-10 ${
-                index % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""
-              }`}>
+              <div className="relative mx-auto grid max-w-[1320px] items-stretch gap-8 px-5 sm:px-7 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14 lg:px-10">
                 <motion.div
                   initial={{ opacity: 0, x: index % 2 === 1 ? 28 : -28 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.15 }}
                   transition={{ duration: 0.6 }}
-                  className="relative z-10"
+                  className={`relative z-10 flex flex-col justify-center ${
+                    index % 2 === 1 ? "order-2 lg:order-2" : "order-1 lg:order-1"
+                  }`}
                 >
                   <div className={`mb-5 flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.18em] sm:text-sm ${
                     isDark ? "text-[#C1D38D]" : "text-[#829B48]"
@@ -364,7 +374,7 @@ export default function OurServicesPage() {
                     <span>Canadiana Export Services</span>
                   </div>
 
-                  <h2 className={`max-w-2xl text-[32px] font-extrabold leading-[1.15] tracking-[-0.04em] sm:text-[40px] lg:text-[44px] ${
+                  <h2 className={`max-w-3xl text-[32px] font-extrabold leading-[1.15] tracking-[-0.04em] sm:text-[40px] lg:text-[44px] ${
                     isDark ? "text-white" : "text-[#252925]"
                   }`}>
                     {service.title}
@@ -415,12 +425,14 @@ export default function OurServicesPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.15 }}
                   transition={{ duration: 0.6, delay: 0.08 }}
-                  className="relative"
+                  className={`relative ${
+                    index % 2 === 1 ? "order-1 lg:order-1" : "order-2 lg:order-2"
+                  }`}
                 >
                   <div className={`absolute -inset-3 rounded-[1.8rem] border ${
                     isDark ? "border-white/10" : "border-[#DCE5CF]"
                   }`} />
-                  <div className="relative">
+                  <div className="relative h-full">
                     <ServiceVisual service={service} />
                     <div className={`absolute -bottom-5 ${index % 2 === 1 ? "right-5" : "left-5"} flex items-center gap-3 rounded-xl border px-4 py-3 shadow-xl backdrop-blur-md ${
                       isDark

@@ -293,12 +293,12 @@ export default function AboutPage() {
     </p>
   </div>
 
-  <Link
+  {/* <Link
     href="/#contact"
     className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#A8BD63] px-7 py-3.5 text-sm font-extrabold text-[#263206] sm:text-base transition hover:-translate-y-0.5 hover:bg-[#BBD17B]"
   >
     Learn More About Us <ArrowUpRight size={18} />
-  </Link>
+  </Link> */}
 </motion.div>
         </div>
       </section>

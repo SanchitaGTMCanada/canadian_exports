@@ -378,9 +378,9 @@ export default function Home() {
               ))}
             </div> */}
 
-            <Link href="#contact" className={`${buttonClass} mt-9`}>
+            {/* <Link href="/about" className={`${buttonClass} mt-9`}>
               Learn More About Us <ArrowRight size={17} />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
@@ -678,18 +678,7 @@ export default function Home() {
       </div>
     )}
 
-    {/* BOTTOM NOTE */}
-    <div className="flex items-center gap-3 px-2 pt-5">
-      <ShieldCheck
-        size={19}
-        className="shrink-0 text-[#A8BD63]"
-      />
-
-      <p className="text-xs leading-6 text-[#777777]">
-        Need specific information? Get in touch with our team
-        for assistance with your requirements.
-      </p>
-    </div>
+   
 
   </div>
 
