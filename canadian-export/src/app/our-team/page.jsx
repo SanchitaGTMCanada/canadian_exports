@@ -26,7 +26,7 @@ const team = [
     role: "Head of Canada and Morocco Region",
     region: "Canada & Morocco",
     image:
-      "https://canadianaexports.ca/wp-content/uploads/2025/10/Mohamed-Hachim-Elazhari_.webp",
+      "images/team/Mohamed.webp",
     imagePosition: "center 28%",
     description:
       "Logistics professional with over 3 years of experience in port operations and supply chain management. Skilled in coordinating complex shipping activities, optimizing workflows, and ensuring smooth communication between stakeholders.",
@@ -38,7 +38,7 @@ const team = [
     role: "Head of Mexico Region",
     region: "Mexico",
     image:
-      "https://canadianaexports.ca/wp-content/uploads/2025/10/Julia-Solorio_-copy.webp",
+      "images/team/Julia.webp",
     imagePosition: "center 30%",
     description:
       "Marketing graduate with over 20 years of experience in sales and business development across the furniture, art, and home décor industries. Throughout her career, she has built strong skills in team leadership, strategic planning, and revenue growth.",
