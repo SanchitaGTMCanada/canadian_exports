@@ -32,7 +32,7 @@ import ContactFooter from "@/components/ContactFooter";
 const images = {
   hero: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1400&q=85",
   about:
-    "/images/home/home-about.jpg",
+    "/images/home/hero-bg.png",
   shipping:
     "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=85",
 };
@@ -46,13 +46,13 @@ const navigation = [
 ];
 
 const services = [
-  { number: "01", icon: Search, image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=85", imageAlt: "Warehouse inventory and product sourcing", title: "Procurement and Sourcing", description: "Vendor discovery, material procurement, and supplier management." },
-  { number: "02", icon: Truck, image: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=85", imageAlt: "Cargo containers ready for transportation", title: "Logistics and Transportation", description: "Multi-modal freight management with inventory transparency." },
-  { number: "03", icon: FileCheck, image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=85", imageAlt: "Export paperwork and documentation", title: "Customs and Documentation", description: "HS code validation, shipping documents, port clearances, and DGFT coordination." },
-  { number: "04", icon: TrendingUp, image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=900&q=85", imageAlt: "International trade and global market strategy", title: "Export Strategy and Market Integration", description: "Market entry research, trade compliance, and pricing strategy." },
-  { number: "05", icon: Package, image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=900&q=85", imageAlt: "Packages moving through a supply chain", title: "Supply Chain Optimization", description: "Demand forecasting, route optimization, and stock minimization." },
-  { number: "06", icon: Headphones, image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85", imageAlt: "Customer support team collaborating", title: "Customer Service and Support", description: "We provide 24/7 support, enabling you to track your orders." },
-  { number: "07", icon: Handshake, image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85", imageAlt: "Business consultants planning export strategy", title: "Consulting and Advisory Services", description: "We collaborate closely with you to develop tailored export strategies." },
+  { number: "01", icon: Search, image: "/images/home/procurement.jpg", imageAlt: "Warehouse inventory and product sourcing", title: "Procurement and Sourcing", description: "Vendor discovery, material procurement, and supplier management." },
+  { number: "02", icon: Truck, image: "/images/home/logistic.jpg", imageAlt: "Cargo containers ready for transportation", title: "Logistics and Transportation", description: "Multi-modal freight management with inventory transparency." },
+  { number: "03", icon: FileCheck, image: "/images/home/customs.jpg", imageAlt: "Export paperwork and documentation", title: "Customs and Documentation", description: "HS code validation, shipping documents, port clearances, and DGFT coordination." },
+  { number: "04", icon: TrendingUp, image: "/images/home/export-strategy.jpg", imageAlt: "International trade and global market strategy", title: "Export Strategy and Market Integration", description: "Market entry research, trade compliance, and pricing strategy." },
+  { number: "05", icon: Package, image: "/images/home/suppychain.jpg", imageAlt: "Packages moving through a supply chain", title: "Supply Chain Optimization", description: "Demand forecasting, route optimization, and stock minimization." },
+  { number: "06", icon: Headphones, image: "/images/home/customer-service.jpg", imageAlt: "Customer support team collaborating", title: "Customer Service and Support", description: "We provide 24/7 support, enabling you to track your orders." },
+  { number: "07", icon: Handshake, image: "/images/home/consulting.jpg", imageAlt: "Business consultants planning export strategy", title: "Consulting and Advisory Services", description: "We collaborate closely with you to develop tailored export strategies." },
 ];
 
 const faqs = [
@@ -444,18 +444,22 @@ export default function Home() {
                   <h3 className="min-h-[58px] text-xl font-bold leading-snug text-[#242424] sm:text-[1.35rem]">
                     {service.title}
                   </h3>
-                  <p className="mt-3 min-h-[84px] text-base leading-7 text-[#555555]">
+                  <p className="mt-1 min-h-[54px] text-base leading-7 text-[#555555]">
                     {service.description}
                   </p>
-                  <div className="mt-6 flex items-center justify-between border-t border-[#E0E0E0] pt-5">
-                    <Link
-                      href="#contact"
-                      className="inline-flex items-center gap-2 text-base font-bold text-[#A8BD63] transition-all duration-300 group-hover:gap-3 group-hover:text-[#242424]"
-                    >
-                      Discuss your needs <ArrowUpRight size={16} />
-                    </Link>
-                    <span className="text-xs font-semibold tracking-widest text-[#A0A0A0]">{service.number}</span>
-                  </div>
+<div className="mt-6 flex items-center justify-between border-t border-[#E0E0E0] pt-5">
+  <a
+    href="#contact"
+    className="inline-flex items-center gap-2 text-base font-bold text-[#A8BD63] transition-all duration-300 group-hover:gap-3 group-hover:text-[#242424]"
+  >
+    Discuss your needs
+    <ArrowUpRight size={16} />
+  </a>
+
+  <span className="text-xs font-semibold tracking-widest text-[#A0A0A0]">
+    {service.number}
+  </span>
+</div>
                 </div>
                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#A8BD63] transition-all duration-500 group-hover:w-full" />
               </motion.article>
@@ -478,210 +482,219 @@ export default function Home() {
 
   <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
 
-    <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+   
+<div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
 
-      {/* LEFT CONTENT */}
-      <div className="lg:sticky lg:top-28">
+  {/* LEFT CONTENT */}
+  <div className="self-start">
 
-        <SectionLabel>Frequently Asked Questions</SectionLabel>
+    <SectionLabel>Frequently Asked Questions</SectionLabel>
 
-        <h2 className="max-w-lg text-4xl font-bold leading-[1.15] tracking-tight text-[#242424] sm:text-5xl">
-          Everything You
-        <br/>
-          Need to Know.
-        </h2>
+    {/* Contact Card */}
+    <div className="relative mt-10 overflow-hidden rounded-[1.7rem] bg-[#242424] p-7 text-white shadow-xl sm:p-9">
 
-        <p className="mt-6 max-w-md text-base leading-8 text-[#444444]">
-          Explore answers to common questions about our export services,
-          international shipping, documentation, products and business
-          processes.
-        </p>
+      {/* Decorative Circles */}
+      <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full border border-white/10" />
+      <div className="absolute -right-6 -top-6 h-28 w-28 rounded-full border border-white/10" />
 
-        {/* Contact Card */}
-        <div className="relative mt-10 overflow-hidden rounded-[1.7rem] bg-[#242424] p-7 text-white shadow-xl sm:p-9">
+      <div className="relative">
 
-          <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full border border-white/10" />
-          <div className="absolute -right-6 -top-6 h-28 w-28 rounded-full border border-white/10" />
-
-          <div className="relative">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#A8BD63] text-[#242424]">
-              <Headphones size={24} />
-            </div>
-
-            <h3 className="text-2xl font-bold">
-              Still have questions?
-            </h3>
-
-            <p className="mt-3 text-base leading-7 text-white/75">
-              Our team is ready to help you with your export requirements
-              and international trade enquiries.
-            </p>
-
-            <Link
-              href="#contact"
-              className="mt-7 inline-flex items-center gap-3 rounded-full bg-[#A8BD63] px-6 py-3 text-base font-bold text-[#242424] transition-all duration-300 hover:bg-[#C1D38D] hover:gap-4"
-            >
-              Contact Our Team
-              <ArrowUpRight size={17} />
-            </Link>
-
-            <div className="mt-8 flex items-center gap-3 border-t border-white/15 pt-6">
-              <Mail size={17} className="shrink-0 text-[#C1D38D]" />
-              <a
-                href="mailto:info@canadianaexports.ca"
-                className="break-all text-base text-white/85 transition hover:text-[#C1D38D]"
-              >
-                info@canadianaexports.ca
-              </a>
-            </div>
-          </div>
+        {/* Icon */}
+        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#A8BD63] text-[#242424]">
+          <Headphones size={24} />
         </div>
 
-      </div>
+        {/* Heading */}
+        <h3 className="text-2xl font-bold">
+          Everything You
+          <br />
+          Need to Know.
+        </h3>
 
-      {/* RIGHT FAQ ACCORDION */}
-      <div className="space-y-3">
+        {/* Description */}
+        <p className="mt-3 text-base leading-7 text-white/75">
+          Explore answers to common questions about our export services,
+          international shipping, documentation, products and business processes.
+        </p>
 
-        {(showAllFaqs ? faqs : faqs.slice(0, 4)).map((faq, index) => {
-          const isActive = activeFaq === index;
+        {/* Contact Button */}
+        <Link
+          href="/our-team"
+          className="mt-7 inline-flex items-center gap-3 rounded-full bg-[#A8BD63] px-6 py-3 text-base font-bold text-[#242424] transition-all duration-300 hover:bg-[#C1D38D] hover:gap-4"
+        >
+          Contact Our Team
+          <ArrowUpRight size={17} />
+        </Link>
 
-          return (
-            <motion.div
-              key={faq.question}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.35,
-                delay: index * 0.04,
-              }}
-              className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
-                isActive
-                  ? "border-[#A8BD63] bg-white shadow-lg shadow-[#242424]/[0.06]"
-                  : "border-[#D9D9D9] bg-white/70 hover:border-[#A8BD63]/70 hover:bg-white"
-              }`}
-            >
-              <div className="flex items-center gap-2 px-5 py-5 sm:px-6 sm:py-6">
-                {/* Main question button */}
-                <button
-                  type="button"
-                  aria-expanded={isActive}
-                  aria-controls={`faq-answer-${index}`}
-                  onClick={() => setActiveFaq(isActive ? -1 : index)}
-                  className="flex min-w-0 flex-1 items-center gap-4 text-left"
-                >
-                  {/* Number */}
-                  <span
-                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xs font-extrabold transition-colors duration-300 ${
-                      isActive
-                        ? "bg-[#242424] text-[#C1D38D]"
-                        : "bg-[#F0F0F0] text-[#A8BD63]"
-                    }`}
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+        {/* Email */}
+        <div className="mt-8 flex items-center gap-3 border-t border-white/15 pt-6">
+          <Mail size={17} className="shrink-0 text-[#C1D38D]" />
 
-                  {/* Question */}
-                  <span className="min-w-0 flex-1 text-base font-bold leading-7 text-[#242424] sm:text-lg">
-                    {expandedQuestions[index] ||
-                    faq.question.length <= QUESTION_LIMIT
-                      ? faq.question
-                      : `${faq.question.slice(0, QUESTION_LIMIT).trim()}...`}
-                  </span>
-
-                  {/* Toggle Icon */}
-                  <span
-                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-                      isActive
-                        ? "rotate-180 bg-[#A8BD63] text-[#242424]"
-                        : "bg-[#F0F0F0] text-[#A8BD63]"
-                    }`}
-                  >
-                    <ChevronDown size={19} />
-                  </span>
-                </button>
-
-                {/* Read more / Read less */}
-                {faq.question.length > QUESTION_LIMIT && (
-                  <button
-                    type="button"
-                    aria-label={
-                      expandedQuestions[index]
-                        ? "Show shorter question"
-                        : "Show full question"
-                    }
-                    onClick={() =>
-                      setExpandedQuestions((previous) => ({
-                        ...previous,
-                        [index]: !previous[index],
-                      }))
-                    }
-                    className="shrink-0 text-xs font-bold text-[#A8BD63] underline decoration-[#A8BD63] underline-offset-4 transition hover:text-[#242424] sm:text-sm"
-                  >
-                    {expandedQuestions[index] ? "Read less" : "Read more"}
-                  </button>
-                )}
-              </div>
-
-              {/* Answer */}
-              <div
-                id={`faq-answer-${index}`}
-                className={`grid transition-all duration-300 ease-in-out ${
-                  isActive
-                    ? "grid-rows-[1fr] opacity-100"
-                    : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <div className="ml-[3.75rem] border-t border-[#DDDDDD] px-4 pb-6 pt-4 sm:ml-[4.5rem] sm:mr-6 sm:px-0">
-                    <p className="text-base leading-7 text-[#444444]">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-            </motion.div>
-          );
-        })}
-
-        {/* Show more / show less FAQs */}
-        {faqs.length > 4 && (
-          <div className="flex justify-center pt-4">
-            <button
-              type="button"
-              onClick={() => {
-                setShowAllFaqs((previous) => !previous);
-                setActiveFaq(-1);
-              }}
-              aria-expanded={showAllFaqs}
-              className="inline-flex items-center gap-2 rounded-full bg-[#242424] px-6 py-3 text-base font-semibold text-white shadow-md transition duration-300 hover:bg-[#A8BD63]"
-            >
-              {showAllFaqs ? "Show Less" : "View All FAQs"}
-              <ChevronDown
-                size={17}
-                className={`transition-transform duration-300 ${
-                  showAllFaqs ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-          </div>
-        )}
-
-        {/* Bottom note */}
-        <div className="flex items-center gap-3 px-2 pt-5">
-          <ShieldCheck
-            size={19}
-            className="shrink-0 text-[#A8BD63]"
-          />
-          <p className="text-xs leading-6 text-[#777777]">
-            Need specific information? Get in touch with our team
-            for assistance with your requirements.
-          </p>
+          <a
+            href="mailto:info@canadianaexports.ca"
+            className="break-all text-base text-white/85 transition hover:text-[#C1D38D]"
+          >
+            info@canadianaexports.ca
+          </a>
         </div>
 
       </div>
     </div>
+
+  </div>
+
+  {/* RIGHT FAQ ACCORDION */}
+  <div className="space-y-3 self-start">
+
+    {(showAllFaqs ? faqs : faqs.slice(0, 4)).map((faq, index) => {
+      const isActive = activeFaq === index;
+
+      return (
+        <motion.div
+          key={faq.question}
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.35,
+            delay: index * 0.04,
+          }}
+          className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
+            isActive
+              ? "border-[#A8BD63] bg-white shadow-lg shadow-[#242424]/[0.06]"
+              : "border-[#D9D9D9] bg-white/70 hover:border-[#A8BD63]/70 hover:bg-white"
+          }`}
+        >
+
+          {/* QUESTION HEADER */}
+          <div className="flex items-center gap-2 px-5 py-5 sm:px-6 sm:py-6">
+
+            <button
+              type="button"
+              aria-expanded={isActive}
+              aria-controls={`faq-answer-${index}`}
+              onClick={() => setActiveFaq(isActive ? -1 : index)}
+              className="flex min-w-0 flex-1 items-center gap-4 text-left"
+            >
+
+              {/* Number */}
+              <span
+                className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xs font-extrabold transition-colors duration-300 ${
+                  isActive
+                    ? "bg-[#242424] text-[#C1D38D]"
+                    : "bg-[#F0F0F0] text-[#A8BD63]"
+                }`}
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              {/* Question */}
+              <span className="min-w-0 flex-1 text-base font-bold leading-7 text-[#242424] sm:text-lg">
+                {expandedQuestions[index] ||
+                faq.question.length <= QUESTION_LIMIT
+                  ? faq.question
+                  : `${faq.question.slice(0, QUESTION_LIMIT).trim()}...`}
+              </span>
+
+              {/* Toggle Icon */}
+              <span
+                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
+                  isActive
+                    ? "rotate-180 bg-[#A8BD63] text-[#242424]"
+                    : "bg-[#F0F0F0] text-[#A8BD63]"
+                }`}
+              >
+                <ChevronDown size={19} />
+              </span>
+
+            </button>
+
+            {/* Read More / Read Less */}
+            {faq.question.length > QUESTION_LIMIT && (
+              <button
+                type="button"
+                aria-label={
+                  expandedQuestions[index]
+                    ? "Show shorter question"
+                    : "Show full question"
+                }
+                onClick={() =>
+                  setExpandedQuestions((previous) => ({
+                    ...previous,
+                    [index]: !previous[index],
+                  }))
+                }
+                className="shrink-0 text-xs font-bold text-[#A8BD63] underline decoration-[#A8BD63] underline-offset-4 transition hover:text-[#242424] sm:text-sm"
+              >
+                {expandedQuestions[index] ? "Read less" : "Read more"}
+              </button>
+            )}
+
+          </div>
+
+          {/* ANSWER */}
+          <div
+            id={`faq-answer-${index}`}
+            className={`grid transition-all duration-300 ease-in-out ${
+              isActive
+                ? "grid-rows-[1fr] opacity-100"
+                : "grid-rows-[0fr] opacity-0"
+            }`}
+          >
+            <div className="overflow-hidden">
+              <div className="ml-[3.75rem] border-t border-[#DDDDDD] px-4 pb-6 pt-4 sm:ml-[4.5rem] sm:mr-6 sm:px-0">
+                <p className="text-base leading-7 text-[#444444]">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </motion.div>
+      );
+    })}
+
+    {/* SHOW MORE / SHOW LESS */}
+    {faqs.length > 4 && (
+      <div className="flex justify-center pt-4">
+        <button
+          type="button"
+          onClick={() => {
+            setShowAllFaqs((previous) => !previous);
+            setActiveFaq(-1);
+          }}
+          aria-expanded={showAllFaqs}
+          className="inline-flex items-center gap-2 rounded-full bg-[#242424] px-6 py-3 text-base font-semibold text-white shadow-md transition duration-300 hover:bg-[#A8BD63]"
+        >
+          {showAllFaqs ? "Show Less" : "View All FAQs"}
+
+          <ChevronDown
+            size={17}
+            className={`transition-transform duration-300 ${
+              showAllFaqs ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+      </div>
+    )}
+
+    {/* BOTTOM NOTE */}
+    <div className="flex items-center gap-3 px-2 pt-5">
+      <ShieldCheck
+        size={19}
+        className="shrink-0 text-[#A8BD63]"
+      />
+
+      <p className="text-xs leading-6 text-[#777777]">
+        Need specific information? Get in touch with our team
+        for assistance with your requirements.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
   </div>
 </section>
 

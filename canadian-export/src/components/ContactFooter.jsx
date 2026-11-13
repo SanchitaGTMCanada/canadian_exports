@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactFooter() {
   return (
-    <footer className="bg-[#172000] text-white">
+    <footer className="bg-[#172000] text-white" id="contact">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
 
         {/* MAIN FOOTER */}
@@ -71,11 +71,11 @@ export default function ContactFooter() {
         <div className="flex flex-col justify-between gap-2 border-t border-white/15 py-5 text-xs text-white/60 sm:flex-row">
 
           <p>
-            © {new Date().getFullYear()} Canadiana Exports. All rights reserved.
+            © COPYRIGHT {new Date().getFullYear()} All Rights Reserved..
           </p>
 
           <p>
-            Connecting Canadian Quality to Global Markets.
+          Web design by GTM CANADA
           </p>
 
         </div>
